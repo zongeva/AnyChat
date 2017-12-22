@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dummy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp">
+
+            <TextView
+                android:id="@+id/tv_item_catalog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vim_delete"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="18:56"
+                android:textSize="14dp"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/VimDividerLeft12Style"
+            android:layout_margin="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/img_item_icon"
+                style="@style/Vim_ItemImgStyle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_item_nick"
+                        style="@style/Vim_ItemBlackTxStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom" />
+
+                    <TextView
+                        android:id="@+id/tv_item_sign"
+                        style="@style/Vim_ItemGrayTxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="top"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_item_sign2"
+                        style="@style/Vim_ItemGrayTxStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="top"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_item_opt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_item_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_item_opt_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/bt_item_agree"
+                            android:layout_width="48dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/vim_rect_blue_selecter"
+                            android:text="@string/vim_agree"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="visible"/>
+
+                        <Button
+                            android:layout_marginTop="8dp"
+                            android:id="@+id/bt_item_deny"
+                            android:layout_width="48dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/vim_shape_bg"
+                            android:text="@string/vim_deny"
+                            android:textColor="@color/vim_black"
+                            android:textSize="12sp"
+                            android:visibility="visible"/>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

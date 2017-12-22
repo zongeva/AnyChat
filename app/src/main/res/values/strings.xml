@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">anychat</string>
+
+    <string name="vim_wait">Loading</string>
+
+    <!--日期时间格式化-->
+    <string name="vim_h">H</string>
+    <string name="vim_m">m</string>
+    <string name="vim_hr">Hr</string>
+    <string name="vim_min">Min</string>
+    <string name="vim_s">S</string>
+    <string name="vim_today">Today</string>
+    <string name="vim_yesterday">Yesterday</string>
+    <string name="vim_tomorrow">Tomorrow</string>
+    <string name="vim_week0">Sunday</string>
+    <string name="vim_week1">Monday</string>
+    <string name="vim_week2">Tuesday</string>
+    <string name="vim_week3">Wednesday</string>
+    <string name="vim_week4">Thursday</string>
+    <string name="vim_week5">Friday</string>
+    <string name="vim_week6">Saturday</string>
+    <string name="vim_day1"> </string>
+    <string name="vim_day2"> </string>
+    <string name="vim_day3"> </string>
+    <string name="vim_day4"> </string>
+    <string name="vim_m_dd">"M/dd "</string>
+    <string name="vim_yyyy_m_dd_">"yyyy/M/dd"</string>
+    <string name="vim_m_dd_ee">M/dd/EE</string>
+    <string name="vim_yyyy_m_">yyyy/M</string>
+    <string name="weak_tips">Weak Alert</string>
+
+    <!--弱提示-->
+    <string name="vim_hint_addGroup">%1$s Join Group Chat</string>
+    <string name="vim_hint_invite">%1$s Invite%2$sTo Group Chat</string>
+    <string name="vim_hint_agree">%1$s Accept%2$sJoin Group Request</string>
+    <string name="vim_hint_exit">%1$s Had Left The Group</string>
+    <string name="vim_hint_remove">%1$s Had Been Remove From Group by %2$s</string>
+    <string name="vim_hint_receipt_read">%1$s Had Read The Message</string>
+    <string name="vim_hint_receipt_auto">Auto Reply :%1$s Receipt Message</string>
+
+    <string name="vim_verifyBuddy"> Friend Request</string>
+    <string name="vim_verifyGroup"> Group Request</string>
+    <string name="vim_checkingmsg_item_0_list">Verification Message</string>
+    <string name="vim_agree_set"> Agree</string>
+    <string name="vim_allow_set"> Approved</string>
+    <string name="vim_deny_set"> Denied</string>
+    <string name="vim_ignore_set"> Ignored</string>
+    <string name="vim_chat_photo">Image</string>
+    <string name="vim_chat_file">File</string>
+    <string name="vim_chat_location">Location</string>
+    <string name="vim_chat_card">Card</string>
+    <string name="vim_chat_burn">Receipt</string>
+    <string name="vim_chat_video">Video</string>
+    <string name="vim_chat_shark">抖一抖</string>
+    <string name="msg_file_error">File Info Error</string>
+    <string name="vim_photos">Album</string>
+    <string name="vim_photoPages">%s Images</string>
+
+    <string name="vim_hint_receipt_other">%1$s已经看过%2$s的阅后回执消息</string>
+    <string name="vim_hint_delete_other">%1$s%2$s Your Remove Request</string>
+    <string name="vim_hint_delete_self">You had %1$s %2$s Request</string>
+    <string name="vim_hint_shark_other">%1$s响应了我的抖一抖</string>
+    <string name="vim_hint_shark_self">我响应%1$s的抖一抖</string>
+    <string name="vim_hint_redPacket_self">%1$s领取了我的红包</string>
+    <string name="vim_hint_redPacket_self_done">您的红包%1$s内被抢完</string>
+    <string name="vim_hint_redPacket_other">我领取了%1$s的红包</string>
+    <string name="recall_myself_msg_tips">您撤回了一条消息</string>
+    <string name="vim_hint_revoke"> %1$s撤回了一条消息</string>
+    <string name="receive_file_success">对方已成功接收了文件%1$s</string>
+    <string name="vim_delete">Remove</string>
+
+    <string name="vim_action_copy">Copy</string>
+    <string name="vim_action_save">Achieve</string>
+    <string name="vim_action_transfer_to_task">转为任务</string>
+    <string name="vim_recall_msg">Recall</string>
+    <string name="vim_action_to_notepad">添加到便捷记事</string>
+    <string name="vim_export">Export</string>
+    <string name="vim_action_forward">Forward</string>
+    <string name="vim_action_more">More</string>
+
+    <string name="vim_agree"> Agree</string>
+    <string name="vim_deny"> Deny</string>
+    <string name="vim_accept"> Accept</string>
+    <string name="receipt"> Receipt</string>
+    <string name="vim_pc">[电脑]</string>
+    <string name="vim_phone">[手机]</string>
+    <string name="vim_pad">[平板]</string>
+    <string name="vim_html">[网页]</string>
+    <string name="vim_audio">[语音]</string>
+    <string name="vim_image">[图片]</string>
+    <string name="vim_file">[文件]</string>
+    <string name="vim_position">[位置]</string>
+    <string name="vim_card">[名片]</string>
+    <string name="dynamic">[动态表情]</string>
+    <string name="instruction">[指令]</string>
+    <string name="burn">[阅后即焚]</string>
+    <string name="composite">[复合消息]</string>
+    <string name="privateMsg">[私信]</string>
+    <string name="vim_weakHint">[提示]</string>
+    <string name="vim_unKnownMsg">[未知]</string>
+    <string name="vim_sending">[发送中]</string>
+    <string name="vim_send_fail">[发送失败]</string>
+    <string name="vim_draft">[草稿] </string>
+    <string name="atMe">[有人@我] </string>
+    <string name="unKnown">[未知]</string>
+    <string name="withdraw">[撤回]</string>
+    <string name="redPacket">[豆豆红包]</string>
+    <string name="composite_message">组合消息</string>
+    <string name="taskMsg">[任务]</string>
+    <string name="htmlMsg">[图文]</string>
+    <string name="templateMsg">[模板]</string>
+    <string name="typeVideo">[音视频消息]</string>
+    <string name="typeSmallvedio">[微视频]</string>
+    <string name="order_eraser">橡皮擦指令</string>
+    <string name="order_shark">抖一抖指令</string>
+    <string name="vim_fail_openFile">打开%1$s文件失败</string>
+    <string name="groupname"><u><b><i>Group Name</i></b></u></string>
+
+    <string name="vim_unKnow">Unknow</string>
+
+    <string name="vim_male">Male</string>
+    <string name="vim_female">Female</string>
+</resources>
