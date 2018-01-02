@@ -22,7 +22,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
  */
 
 
-public class DemoApp extends Application{
+public class DemoApp extends Application {
 
     public static final String MY_PREFS_NAME = "MyPrefsFile";
     String init_bool = "";
@@ -33,29 +33,35 @@ public class DemoApp extends Application{
 
         final SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         init_bool = prefs.getString("init_bool", "");
+        Log.e("Code gone thru here", "Successfully line 36");
 
-        if(init_bool.equals("true")){
+        if (init_bool.equals("true")) {
+            Log.e("Code gone thru here", "Successfully line 39");
             boolean init = VIMClient.init(this, "com.kpz.AnyChat");
-            if (!init){
+            Log.e("Code gone thru here", "Successfully 41");
+            if (!init) {
                 Log.e("UCC Log", "Code: 1101001 SDK failed to initial");
+                Log.e("Code gone thru here", "Successfully line 44");
 
-            }
-            else {
+            } else {
                 Log.e("UCC Log", "Code: 1101002 SDK successfully initial");
                 SDKClient defaultClient = ClientManager.getDefault();
                 final AuthService authService = defaultClient.getAuthService();
 
+                Log.e("Code gone thru here", "Successfully line 51");
+
                 if (defaultClient != null) {
                     defaultClient = ClientManager.getDefault();
                     VIMClient.registerReceiver(this);
+
+
                 } else {
                     Toast.makeText(DemoApp.this, "Fail To Initialize SDK", Toast.LENGTH_SHORT).show();
                 }
 
                 VIMClient.registerReceiver(this);
             }
-        }
-        else if(init_bool.equals("")){
+        } else if (init_bool.equals("")) {
             Intent intent = new Intent(DemoApp.this, Request_Permission.class);
             intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
