@@ -1,15 +1,20 @@
 package com.kpz.Anychat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.CountDownTimer;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kpz.Anychat.Others.RequestHelper;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
@@ -33,28 +38,20 @@ public class DemoApp extends Application {
 
         final SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         init_bool = prefs.getString("init_bool", "");
-        Log.e("Code gone thru here", "Successfully line 36");
 
         if (init_bool.equals("true")) {
-            Log.e("Code gone thru here", "Successfully line 39");
             boolean init = VIMClient.init(this, "com.kpz.AnyChat");
-            Log.e("Code gone thru here", "Successfully 41");
             if (!init) {
                 Log.e("UCC Log", "Code: 1101001 SDK failed to initial");
-                Log.e("Code gone thru here", "Successfully line 44");
 
             } else {
                 Log.e("UCC Log", "Code: 1101002 SDK successfully initial");
                 SDKClient defaultClient = ClientManager.getDefault();
                 final AuthService authService = defaultClient.getAuthService();
 
-                Log.e("Code gone thru here", "Successfully line 51");
-
                 if (defaultClient != null) {
                     defaultClient = ClientManager.getDefault();
                     VIMClient.registerReceiver(this);
-
-
                 } else {
                     Toast.makeText(DemoApp.this, "Fail To Initialize SDK", Toast.LENGTH_SHORT).show();
                 }
@@ -67,6 +64,14 @@ public class DemoApp extends Application {
             startActivity(intent);
         }
 
+        TelephonyManager telephonyManager;
+        telephonyManager = (TelephonyManager) DemoApp.this.getSystemService(Context.TELEPHONY_SERVICE);
+
+
+        String deviceId = telephonyManager.getDeviceId();
+        String ids = String.valueOf(RequestHelper.getAccountInfo().getID());
+        SharedPreferences prefs1 = DemoApp.this.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String shared_login_password = prefs1.getString("shared_login_password", "");//"No name defined" is the default value.
 
     }
 }
