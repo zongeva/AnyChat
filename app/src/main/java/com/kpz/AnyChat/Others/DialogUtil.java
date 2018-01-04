@@ -1,4 +1,4 @@
-package com.kpz.Anychat.Others;
+package com.kpz.AnyChat.Others;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.TimePicker;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.kpz.Anychat.R;
+import com.kpz.AnyChat.R;
 
 import java.util.Calendar;
 

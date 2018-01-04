@@ -1,20 +1,14 @@
-package com.kpz.Anychat;
+package com.kpz.AnyChat;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.os.CountDownTimer;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kpz.Anychat.Others.RequestHelper;
+import com.kpz.AnyChat.Others.RequestHelper;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
@@ -23,9 +17,8 @@ import com.vrv.imsdk.model.SDKClient;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 /**
- * Created by Admin on 12-Dec-2017.
+ * Created by Admin on 05-Jan-2018.
  */
-
 
 public class DemoApp extends Application {
 
@@ -72,6 +65,5 @@ public class DemoApp extends Application {
         String ids = String.valueOf(RequestHelper.getAccountInfo().getID());
         SharedPreferences prefs1 = DemoApp.this.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String shared_login_password = prefs1.getString("shared_login_password", "");//"No name defined" is the default value.
-
     }
 }

@@ -1,11 +1,9 @@
-package com.kpz.Anychat.Others;
+package com.kpz.AnyChat.Others;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.kpz.Anychat.Others.RequestCallBack;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.bean.ContactVerifyType;
 import com.vrv.imsdk.bean.DownloadFileProperty;
@@ -31,7 +29,6 @@ import com.vrv.imsdk.bean.RecommendContact;
 import com.vrv.imsdk.bean.SearchResult;
 import com.vrv.imsdk.bean.SmallMarketAppInfo;
 import com.vrv.imsdk.bean.SmallMarketAppPage;
-import com.vrv.imsdk.bean.TransferLocalData;
 import com.vrv.imsdk.bean.UserSetting;
 import com.vrv.imsdk.chatbean.ChatMsg;
 import com.vrv.imsdk.chatbean.ChatMsgApi;
@@ -53,7 +50,6 @@ import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SystemMsg;
 import com.vrv.imsdk.model.TinyGroup;
 import com.vrv.imsdk.model.User;
-import com.vrv.imsdk.util.JsonToolHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

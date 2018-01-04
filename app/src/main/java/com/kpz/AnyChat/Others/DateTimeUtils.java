@@ -1,11 +1,11 @@
-package com.kpz.Anychat.Others;
+package com.kpz.AnyChat.Others;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.format.DateUtils;
 import android.text.format.Time;
 
-import com.kpz.Anychat.R;
+import com.kpz.AnyChat.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

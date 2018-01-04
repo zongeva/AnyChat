@@ -1,4 +1,4 @@
-package com.kpz.Anychat;
+package com.kpz.AnyChat;
 
 import android.Manifest;
 import android.app.Activity;
@@ -30,7 +30,7 @@ public class Request_Permission extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.request_permission);
+        setContentView(R.layout.activity_request_permission);
 
         ap_button1 = (Button) findViewById(R.id.ap_button1);
         // This function called when user press complete button
@@ -42,7 +42,6 @@ public class Request_Permission extends Activity {
         });
 
         askForPermission(Manifest.permission.READ_PHONE_STATE, WRITE_EXST);
-
     }
 
     // Check required permission have been granted or not

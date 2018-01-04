@@ -1,4 +1,4 @@
-package com.kpz.Anychat;
+package com.kpz.AnyChat;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.vrv.imsdk.ClientManager;
-import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SDKClient;
@@ -25,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_activity);
 
         et_hpnum = (EditText) findViewById(R.id.et_phonenumber);
         et_password = (EditText) findViewById(R.id.et_password);
@@ -73,10 +72,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.kpz.Anychat.Others;
+package com.kpz.AnyChat.Others;
 
 import android.app.Dialog;
 import android.content.Context;

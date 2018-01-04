@@ -1,4 +1,4 @@
-package com.kpz.Anychat;
+package com.kpz.AnyChat;
 
 import org.junit.Test;
 

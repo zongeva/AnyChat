@@ -1,4 +1,4 @@
-package com.kpz.Anychat.Others;
+package com.kpz.AnyChat.Others;
 
 import android.content.Context;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TimePicker;
 
-import com.kpz.Anychat.R;
+import com.kpz.AnyChat.R;
 
 /**
  * Created by Yang on 2015/11/12 012.
