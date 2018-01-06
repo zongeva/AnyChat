@@ -43,16 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         final AuthService authService = defaultClient.getAuthService();
 
 
-
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (et_hpnum.getText().toString().equals("") || et_password.getText().toString().equals(""))
-                {
+                if (et_hpnum.getText().toString().equals("") || et_password.getText().toString().equals("")) {
                     Toast.makeText(LoginActivity.this, "Phone number or password is empty", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                } else {
                     byte accountType = 7;
                     String hpnum = et_hpnum.getText().toString();
                     String password = et_password.getText().toString();
@@ -65,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void onError(int i, String s) {
-                            Log.e("test", "Authentication fail"+ i + " " + s);
+                            Log.e("test", "Authentication fail" + i + " " + s);
                         }
                     });
 
