@@ -33,7 +33,7 @@ dependencies {
 
     implementation files('libs/gson-2.2.2.jar')
     implementation files('libs/javacpp.jar')
-    implementation files('libs/vimsdk-2.4.5.20171130.jar')
+    compile files('libs/vimsdk-2.4.5.20171130.jar')
 
     compile 'cn.dreamtobe.kpswitch:library:1.4.2'
     dependencies {
