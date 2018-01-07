@@ -24,7 +24,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <service android:name="com.vrv.imsdk.service.ApNotifyService" />
 
         <receiver android:name="com.vrv.imsdk.receiver.ApNotifyReceiver">
@@ -40,16 +39,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".Request_Permission">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".Others.Register"></activity>
     </application>
 
 </manifest>
