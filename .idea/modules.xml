@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Anychat_fyp.iml" filepath="$PROJECT_DIR$/Anychat_fyp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AnyChat.iml" filepath="$PROJECT_DIR$/AnyChat.iml" />
+      <module fileurl="file://D:\zong\AnyChat\Anychat_fyp.iml" filepath="D:\zong\AnyChat\Anychat_fyp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
