@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.vrv.imsdk.ClientManager;
+import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SDKClient;
@@ -31,12 +32,12 @@ public class LoginActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         final String server = "im.linkdood.com";
 
-//        boolean init = VIMClient.init(this, "com.kpz.anychat");
-//        if (!init) {
-//            Log.e("UCC Log", "Code: 1101001 SDK failed to initialize");
-//        } else {
-//            Log.e("UCC Log", "Code: 1101002 SDK successfully initialize");
-//        }
+        boolean init = VIMClient.init(this, "com.kpz.anychat");
+        if (!init) {
+            Log.e("UCC Log", "Code: 1101001 SDK failed to initialize");
+        } else {
+            Log.e("UCC Log", "Code: 1101002 SDK successfully initialize");
+        }
 
         SDKClient defaultClient = ClientManager.getDefault();
 //        final AuthService authService = null;
