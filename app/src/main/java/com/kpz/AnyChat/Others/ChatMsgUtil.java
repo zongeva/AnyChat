@@ -94,13 +94,8 @@ public class ChatMsgUtil {
             case ChatMsgApi.TYPE_CARD:
                 return context.getString(R.string.vim_card);
             case ChatMsgApi.TYPE_WEAK_HINT:
-                if (chat.getOprType() == 5) {
-
-                } else{
-                    String hint = JsonToolHelper.parseTxtJson(msg);
-                    return TextUtils.isEmpty(hint) ? context.getString(R.string.vim_weakHint) : hint;
-                }
-
+                String hint = JsonToolHelper.parseTxtJson(msg);
+                return TextUtils.isEmpty(hint) ? context.getString(R.string.vim_weakHint) : hint;
             case ChatMsgApi.TYPE_RED_ENVELOPE:
                 return context.getString(R.string.redPacket) + JsonToolHelper.parseTxtJson(msg);
             case ChatMsgApi.TYPE_INSTRUCTION:

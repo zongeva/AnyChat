@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="false"
@@ -31,6 +32,10 @@
                 <action android:name="com.vrv.imsdk.receiver.ApNotifyReceiver" />
             </intent-filter>
         </receiver>
+
+        <meta-data
+            android:name="com.vrv.imsdk"
+            android:value="0l" />
 
         <activity android:name=".LoginActivity">
             <intent-filter>

@@ -61,13 +61,6 @@ public class Request_Permission extends Activity {
             editor.putString("init_bool", "true");
             editor.apply();
 
-            boolean init = VIMClient.init(this, "com.kpz.AnyChat");
-            if (!init) {
-                Log.e("UCC Log", "Code: 1101001 SDK failed to initial");
-            } else {
-                Log.e("UCC Log", "Code: 1101002 SDK successfully initial");
-            }
-
             Log.e("UCC Log", "Code: 1001003 All required permission granted");
             Request_Permission.this.startActivity(new Intent(Request_Permission.this, LoginActivity.class));
             finish();
