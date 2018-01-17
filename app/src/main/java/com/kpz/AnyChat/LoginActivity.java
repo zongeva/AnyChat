@@ -1,5 +1,6 @@
 package com.kpz.AnyChat;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText et_hpnum;
     EditText et_password;
-    Button btn_login;
+    Button btn_login, btn_createnewaccount;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
 
 
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         et_hpnum = (EditText) findViewById(R.id.et_phonenumber);
         et_password = (EditText) findViewById(R.id.et_password);
         btn_login = (Button) findViewById(R.id.btn_login);
+        btn_createnewaccount = (Button) findViewById(R.id.btn_createnewaccount);
         final String server = "im.linkdood.com";
 
         boolean init = VIMClient.init(this, "com.kpz.anychat");
@@ -43,6 +45,12 @@ public class LoginActivity extends AppCompatActivity {
 //        final AuthService authService = null;
         final AuthService authService = defaultClient.getAuthService();
 
+        btn_createnewaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginActivity.this.startActivity(new Intent(LoginActivity.this, Register.class));
+            }
+        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +65,16 @@ public class LoginActivity extends AppCompatActivity {
                     authService.login(accountType, hpnum, password, server, new ResultCallBack<Long, Void, Void>() {
                         @Override
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
-                            //go to chat
+                            //go to chat list
+                            Toast.makeText(LoginActivity.this, "login success", Toast.LENGTH_SHORT).show();
+
                         }
 
                         @Override
                         public void onError(int i, String s) {
                             Log.e("test", "Authentication fail" + i + " " + s);
+                            Toast.makeText(LoginActivity.this, "login fail", Toast.LENGTH_SHORT).show();
+
                         }
                     });
 

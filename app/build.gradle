@@ -30,16 +30,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     implementation files('libs/gson-2.2.2.jar')
     implementation files('libs/javacpp.jar')
-    compile files('libs/vimsdk-2.4.5.20171130.jar')
-
     compile 'cn.dreamtobe.kpswitch:library:1.4.2'
     dependencies {
         compile('com.afollestad.material-dialogs:core:0.9.4.5@aar') {
             transitive = true
         }
     }
-
+    implementation files('libs/vimsdk-2.4.7.20171220.jar')
 }

@@ -27,8 +27,6 @@
         android:theme="@style/AppTheme">
         <service android:name="com.vrv.imsdk.service.ApNotifyService" />
 
-        <service android:name=".Others.MsgReceiver" />
-
         <receiver android:name="com.vrv.imsdk.receiver.ApNotifyReceiver">
             <intent-filter>
                 <action android:name="com.vrv.imsdk.receiver.ApNotifyReceiver" />
@@ -53,7 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Others.Register"></activity>
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>
