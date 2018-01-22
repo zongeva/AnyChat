@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView67"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/space_up" />
+
+        <TextView
+            android:id="@+id/textView70"
+            android:onClick="set_begin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView67"
+            android:background="@drawable/space_middle" />
+
+        <TextView
+            android:id="@+id/textView73"
+            android:onClick="set_endtime"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView70"
+            android:background="@drawable/space_bottom" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+
+            android:layout_width="36dp"
+            android:layout_height="23dp"
+            android:layout_alignBottom="@+id/textView67"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/toogle_selector"
+            android:onClick="go_no_disturb"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <TextView
+            android:id="@+id/textView68"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView67"
+            android:layout_alignParentStart="true"
+            android:layout_margin="13dp"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="No Disturb Mode" />
+
+        <TextView
+            android:id="@+id/textView71"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView73"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Start Time" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView73"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="End Time" />
+
+        <TextView
+            android:id="@+id/endtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/time"
+            android:layout_alignBottom="@+id/time"
+            android:layout_alignEnd="@+id/begintime"
+            android:text="End Time"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/begintime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView71"
+            android:layout_alignEnd="@+id/toggleButton"
+            android:text="Begin Time"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView60"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/space_up"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView61"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView60"
+            android:background="@drawable/space_bottom"
+             />
+
+        <TextView
+            android:id="@+id/textView64"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView61"
+            android:background="@drawable/space_bottom"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView61"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="UCC ID" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView64"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="Email Address"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView64"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="Login ID" />
+
+        <TextView
+            android:id="@+id/linkdoodid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView62"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="linkdoodid"
+            android:textAlignment="gravity"
+            android:layout_toEndOf="@+id/textView62" />
+
+        <TextView
+            android:id="@+id/phonenum"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="phone_num"
+            android:textAlignment="gravity"
+            android:layout_alignBaseline="@+id/textView65"
+            android:layout_alignBottom="@+id/textView65"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView63"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="email_address"
+            android:textAlignment="gravity"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView63"
+            android:layout_marginTop="33dp"
+            android:background="@drawable/phone_num_slot"
+            android:onClick="chg_pw"
+            android:text=""
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView69"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView27"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="Change Password"
+            android:visibility="invisible" />
+
+        <ImageView
+
+            android:id="@+id/imageView22"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_alignBottom="@+id/textView27"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="12dp"
+            android:onClick="chg_pw"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right" />
+
+    </RelativeLayout>
+
+</LinearLayout>

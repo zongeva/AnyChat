@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bubble_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/avatar_onclick"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/progress_chat_receiver"
+        android:src="@mipmap/vim_icon_default_user" />
+
+    <RelativeLayout
+        android:id="@+id/receiver_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress_chat_receiver"
+        android:layout_gravity="right"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/avatar_onclick"
+        android:layout_weight="0.12"
+        android:background="@drawable/chatbubble"
+        android:backgroundTint="#eaeaea"
+        android:longClickable="true"
+        android:minHeight="53dp"
+        android:paddingBottom="5dp">
+
+
+        <TextView
+            android:id="@+id/background"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/image_received"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/layout_listview"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/Origin_Timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/background"
+            android:layout_alignEnd="@+id/background"
+            android:text="TextView"
+            android:textColor="@color/grey500"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/reply_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/background"
+            android:layout_alignBottom="@+id/background"
+            android:layout_alignParentStart="true"
+            android:text="Short Content"
+            android:maxLength="35"
+
+            android:textColor="@color/grey500"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/receiver_message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignEnd="@+id/image_received"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/background"
+            android:layout_gravity="center"
+            android:maxEms="12"
+            android:textColor="@color/grey800" />
+
+        <TextView
+            android:id="@+id/receiver_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/receiver_message_text"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="Timestamp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black87"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/image_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="55dp"
+            android:visibility="gone"
+            app:srcCompat="@color/transparent" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/temps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/avatar_onclick"
+        android:layout_marginEnd="66dp"
+        android:layout_marginTop="61dp"
+        android:text="Error"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/receiver_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/receiver_box"
+        android:layout_alignStart="@+id/receiver_box"
+        android:layout_gravity="center"
+        android:maxEms="12"
+        android:paddingLeft="5dp"
+        android:text="Nickname"
+        android:textColor="#A9AD9C" />
+
+    <ProgressBar
+        android:id="@+id/progress_chat_receiver"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/receiver_box"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

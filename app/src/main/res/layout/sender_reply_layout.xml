@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bubble_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="8dp"
+
+    android:weightSum="1">
+
+    <ProgressBar
+        android:id="@+id/progress_chat_send"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+
+        android:layout_toStartOf="@+id/send_box"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/send_box"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="right"
+        android:layout_weight="0.12"
+        android:background="@drawable/chatbubble"
+        android:backgroundTint="#057eff"
+        android:longClickable="true"
+        android:minHeight="53dp">
+
+        <TextView
+            android:id="@+id/sender_reply_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/sender_reply_body"
+            android:text="Timestamp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/layout_listview" />
+
+        <TextView
+            android:id="@+id/reply_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+
+            android:layout_margin="5dp"
+            android:text="Short Content"
+            android:textColor="@color/grey500" />
+
+        <TextView
+            android:id="@+id/sender_reply_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/background"
+            android:text="Reply Content"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/Origin_Timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/background"
+            android:layout_alignParentEnd="true"
+            android:text="Time"
+
+            android:textColor="@color/grey500" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/send_box"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/read_icons"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/send_box"
+        android:src="@drawable/received"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

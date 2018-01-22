@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.kpz.AnyChat.Home_Activity.HomeActivity;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
@@ -62,13 +63,16 @@ public class LoginActivity extends AppCompatActivity {
                     String hpnum = et_hpnum.getText().toString();
                     String hpnumCountry = "006" + hpnum;
                     String password = et_password.getText().toString();
-                    Toast.makeText(LoginActivity.this, hpnumCountry, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, hpnumCountry, Toast.LENGTH_SHORT).show();
 
                     authService.login(accountType, hpnumCountry, password, server, new ResultCallBack<Long, Void, Void>() {
                         @Override
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
                             //go to chat
                             Toast.makeText(LoginActivity.this, "Log in success", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
                         }
 
                         @Override

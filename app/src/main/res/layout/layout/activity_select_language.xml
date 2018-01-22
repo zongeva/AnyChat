@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <WebView
+            android:id="@+id/web1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <Button
+            android:id="@+id/button6"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="#ffffff"
+            android:gravity="bottom|center"
+            android:onClick="btn_alreadyhaveaccount"
+            android:text="Already have an account?"
+            android:textColor="#3680BC"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="116dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_button"
+            android:onClick="btn_done"
+            android:text="Continue"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <com.linkdood.ucc.MultiSelectionSpinner
+            android:id="@+id/input1"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView7"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/phone_num_slot"
+            android:text=" "
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="144dp"
+            android:gravity="center"
+            android:text="What Language Do You Know?"
+            android:textColor="#3680BC"
+            android:textSize="25dp"
+            android:textStyle="normal"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</LinearLayout>

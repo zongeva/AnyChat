@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+
+    android:tag="unique_tag">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="216dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/login3" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/login_using"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left"
+                    android:paddingLeft="20px"
+                    android:text="Login using: "
+                    android:textColor="#3680BC" />
+
+                <RadioButton
+                    android:id="@+id/phonenum_radiobtnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Phone Login"
+                    android:textColor="#3680BC" />
+
+                <RadioButton
+                    android:id="@+id/email_radiobtnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Login"
+                    android:textColor="#3680BC" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!--<Spinner-->
+                <!--android:id="@+id/spinner_country"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="35dp"-->
+
+                <!--android:layout_marginLeft="5dp"-->
+
+                <!--android:background="@drawable/phone_num_slot"-->
+                <!--android:spinnerMode="dropdown"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignParentStart="true" />-->
+
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:ccp_customMasterCountries="MY,SG,CN,US,TW"
+                    app:ccp_defaultNameCode="MY" />
+
+                <EditText
+                    android:id="@+id/et_phonenumber"
+                    android:layout_width="220dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toEndOf="@+id/ccp"
+                    android:background="@drawable/phone_num_slot"
+                    android:hint="Phone number"
+                    android:maxLength="15"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/et_emailLogin"
+                    android:layout_width="220dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/phone_num_slot"
+                    android:hint=" Email Address"
+                    android:maxLength="64"
+                    android:inputType="textEmailAddress"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/phone_num_slot"
+
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="8dp"
+                android:background="@drawable/layout_button"
+                android:text="LOGIN"
+                android:textColor="#ffffff" />
+            <Button
+                android:id="@+id/btn_forgotpassword"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#ffffff"
+                android:text="Forgotten Password?"
+                android:textColor="#3680BC" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="------------ OR ------------"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dummyi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <Button
+                android:id="@+id/btn_createnewaccount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="8dp"
+                android:backgroundTint="#ffffff"
+                android:text="Create New Account"
+
+                android:textColor="#3680BC" />
+
+            <TextView
+                android:id="@+id/reporting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="TextView"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Powered By LiNKDOOD Technologies" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

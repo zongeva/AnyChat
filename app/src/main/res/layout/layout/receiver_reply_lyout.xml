@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bubble_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="8dp"
+
+    android:weightSum="1">
+    <ImageView
+        android:id="@+id/avatar_onclick_reply"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/vim_icon_default_user" />
+    <ProgressBar
+        android:id="@+id/progress_chat_receive"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+
+        android:layout_toStartOf="@+id/send_box"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/receiver_box"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/avatar_onclick_reply"
+        android:layout_weight="0.12"
+        android:background="@drawable/chatbubble"
+        android:backgroundTint="#eaeaea"
+        android:longClickable="true"
+        android:minHeight="53dp">
+
+        <TextView
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/layout_listview" />
+
+        <TextView
+            android:id="@+id/reply_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:text="Short Content"
+            android:textColor="@color/grey500" />
+
+        <TextView
+            android:id="@+id/receiver_reply_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/background"
+            android:text="Reply Content"
+            android:textColor="@color/grey500" />
+
+        <TextView
+            android:id="@+id/receiver_reply_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/receiver_reply_body"
+            android:text="Timestamp" />
+
+        <TextView
+            android:id="@+id/Origin_Timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/background"
+
+            android:layout_alignParentEnd="true"
+            android:text="TextView"
+            android:textColor="@color/grey500" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dummy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress_chat_send"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/grey500"
+        android:layout_toStartOf="@+id/progress_chat_send"
+        android:text="Time"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

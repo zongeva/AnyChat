@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/button5"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="#ffffff"
+            android:gravity="bottom|center"
+            android:onClick="btn_alreadyhaveaccount"
+            android:text="Already have an account?"
+            android:textColor="#3680BC" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="34dp"
+            android:text="Please Select Your Gender"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/blue_button"
+            android:textSize="25dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/textView"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="39dp"
+            android:background="@android:color/transparent"
+            android:onClick="female_selected"
+            android:scaleType="fitXY"
+            android:src="@drawable/female" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignTop="@+id/imageButton"
+            android:layout_marginLeft="20dp"
+            android:background="@android:color/transparent"
+            android:onClick="male_selected"
+            android:scaleType="fitXY"
+            android:src="@drawable/maleunselect" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_above="@+id/button5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_button"
+            android:onClick="btn_select_sex"
+            android:text="Continue"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="You can change this later in your settings."
+            android:layout_above="@+id/button"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/skipgender"
+            android:onClick="skipgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Skip this, I'll choose it later on."
+            android:layout_above="@+id/textView6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

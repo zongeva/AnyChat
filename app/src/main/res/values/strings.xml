@@ -1,7 +1,30 @@
 <resources>
-    <string name="app_name">anychat</string>
+    <string name="app_name">AnyChat</string>
 
     <string name="vim_wait">Loading</string>
+
+    <string-array name="my_array">
+        <item>Enable Notification</item>
+        <item>Mute Notification</item>
+    </string-array>
+
+    <string name="retry_button_text">Retry</string>
+    <string name="default_coin_text">Coins: 0</string>
+    <string name="watch_video_button_text">Watch Video for additional coins</string>
+
+    <string name="version">UCC Version : 0.5.00 16 Jan 2018</string>
+    <string name="version_check">0.1.0</string>
+    <string name="sending">Sending…</string>
+    <string name="send_message">Send message</string>
+    <string name="title">Chats</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="date_label_set">Press the button to set the date</string>
+    <string name="date_button_set">Set Date</string>
+    <string name="date_view_set">This Is Your Birthday :</string>
+    <string name="date_selected"></string>
+    <string name="title_activity_chat__list">Chat_List</string>
+    <string name="next_msg_eat">false</string>
 
     <!--日期时间格式化-->
     <string name="vim_h">H</string>
