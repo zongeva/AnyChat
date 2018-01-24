@@ -39,4 +39,17 @@ dependencies {
         }
     }
     implementation files('libs/vimsdk-2.4.7.20171220.jar')
+
+    compile 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.armcha:LuseenBottomNavigation:1.8.2'
+    compile 'com.github.jjobes:slideDateTimePicker:1.0.2'
+    compile 'com.hbb20:ccp:2.0.3'
+    compile 'com.juanpabloprado:countrypicker:1.2.0'
+
+
+
 }

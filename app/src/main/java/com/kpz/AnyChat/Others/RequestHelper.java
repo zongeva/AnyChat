@@ -1,9 +1,13 @@
 package com.kpz.AnyChat.Others;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.kpz.AnyChat.LoginActivity;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.bean.ContactVerifyType;
 import com.vrv.imsdk.bean.DownloadFileProperty;
@@ -40,7 +44,9 @@ import com.vrv.imsdk.extbean.OrganizationInfo;
 import com.vrv.imsdk.extbean.Room;
 import com.vrv.imsdk.extbean.SearchNoteInfo;
 import com.vrv.imsdk.extbean.Task;
+import com.vrv.imsdk.listener.ReLoginListener;
 import com.vrv.imsdk.model.Account;
+import com.vrv.imsdk.model.AccountService;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.Chat;
 import com.vrv.imsdk.model.Contact;
@@ -55,6 +61,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 /**
  * 请求统一管理入口
@@ -1635,12 +1643,12 @@ public class RequestHelper {
         ClientManager.getDefault().getUserService().addOrDeleteCustomEmoticon(isAdd, emoticon, callBack);
     }
 
-    /**
-     * 本地数据导入导出
-     *
-     * @param req      见结构体定义处说明
-     * @param callBack 传入接收结果回调  _1错误信息 _2resultCode _3resultMsg _4successList _5failedList
-     */
+//    /**
+//     * 本地数据导入导出
+//     *
+//     * @param req      见结构体定义处说明
+//     * @param callBack 传入接收结果回调  _1错误信息 _2resultCode _3resultMsg _4successList _5failedList
+//     */
 //    public static void transLocalData(TransferLocalData req, RequestCallBack callBack) {
 //        ClientManager.getDefault().getUserService().transLocalData(req, callBack);
 //    }
@@ -2166,5 +2174,32 @@ public class RequestHelper {
         chat.setUnreadCount(unReadNum);
         chat.setRealUnreadCount(unReadNum);
         return chat;
+    }
+
+    public static void login_status (Context context){
+        final Context context1 = context;
+        AccountService accountService = ClientManager.getDefault().getAccountService() ;
+        accountService.observeReLoginListener(new ReLoginListener() {
+            @Override
+            public void onReLogin(long l) {
+
+//                Toast.makeText(context1, "Your UCC account has been logged into another device, Change your password if you didn't perform this action.", Toast.LENGTH_LONG).show();
+                Toast.makeText(context1, "Your account has been logged into another device.", Toast.LENGTH_LONG).show();
+                ClientManager.getDefault().getAuthService().logout(new ResultCallBack() {
+                    @Override
+                    public void onSuccess(Object o, Object o2, Object o3) {
+                        Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
+                        Intent intent = new Intent(context1, LoginActivity.class);
+                        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                        context1.startActivity(intent);
+                    }
+
+                    @Override
+                    public void onError(int i, String s) {
+                        Log.e("UCC Log", "Code: " + Utils.osType + "1501002 Logout Failed");
+                    }
+                });
+            }
+        });
     }
 }

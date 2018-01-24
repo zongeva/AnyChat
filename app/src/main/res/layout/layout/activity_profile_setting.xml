@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/space_up"
+            android:onClick="set_avatar"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView19"
+            android:background="@drawable/space_middle"
+            android:onClick="go_changepw"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="match_parent"
+
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView27"
+            android:background="@drawable/space_bottom"
+            android:onClick="go_set_nick"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView40"
+            android:background="@drawable/space_bottom"
+            android:text=""
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView13"
+            android:layout_alignTop="@+id/textView41"
+            android:onClick="go_set_nick"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_alignBottom="@+id/region"
+            android:layout_centerHorizontal="true"
+            app:ccp_customMasterCountries="MY,SG,CN,US,TW"
+            app:ccp_defaultNameCode="MY" />
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView34"
+            android:onClick="go_birthday"
+
+            android:background="@drawable/space_middle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:onClick="go_whatsup"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView37"
+            android:background="@drawable/space_bottom"
+            android:text="" />
+
+        <TextView
+            android:onClick="go_selectregion"
+
+            android:id="@+id/textView37"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView32"
+            android:background="@drawable/space_middle"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:onClick="go_gender"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/space_up"
+            android:text=""
+            android:layout_below="@+id/textView30"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignBottom="@+id/textView19"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:onClick="set_avatar"
+            android:src="@mipmap/vim_icon_default_user" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/avatar"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginStart="19dp"
+            android:text="Profile Photo" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView40"
+            android:layout_alignStart="@+id/textView41"
+            android:paddingBottom="12dp"
+            android:text="Change Password" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView30"
+            android:layout_alignStart="@+id/textView20"
+            android:paddingBottom="12dp"
+            android:text="Nickname" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView30"
+            android:layout_alignStart="@+id/textView29"
+            android:onClick="go_qr_gen"
+            android:paddingBottom="12dp"
+            android:text="QR Code"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView36"
+            android:layout_alignStart="@+id/textView39"
+            android:paddingBottom="9dp"
+            android:text="What's Up" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView36"
+            android:layout_alignStart="@+id/textView38"
+            android:paddingBottom="9dp"
+            android:text="Region" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView32"
+            android:layout_alignStart="@+id/textView35"
+            android:paddingBottom="9dp"
+            android:text="Birthday" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView34"
+            android:layout_alignStart="@+id/textView31"
+            android:paddingBottom="9dp"
+            android:text="Gender" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView20"
+            android:layout_alignTop="@+id/textView33"
+            android:onClick="go_whatsup"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView19"
+            android:layout_alignTop="@+id/textView39"
+            android:onClick="go_selectregion"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView18"
+            android:layout_alignTop="@+id/textView38"
+            android:onClick="go_birthday"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView17"
+            android:layout_alignTop="@+id/textView35"
+            android:onClick="go_gender"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignStart="@+id/imageView15"
+            android:layout_alignTop="@+id/textView31"
+            android:onClick="go_qr_gen"
+            android:paddingBottom="5dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+
+            android:id="@+id/imageView13"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignEnd="@+id/avatar"
+            android:layout_alignTop="@+id/textView29"
+            android:onClick="go_changepw"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/right" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView18"
+            android:layout_toStartOf="@+id/imageView18"
+            android:text="Gender" />
+
+        <TextView
+            android:id="@+id/whatsups"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:layout_alignTop="@+id/imageView12"
+            android:layout_toStartOf="@+id/imageView12"
+            android:text="Loading..." />
+
+        <TextView
+            android:id="@+id/dob"
+            android:paddingBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView37"
+            android:layout_toStartOf="@+id/imageView19"
+            android:text="Loading..." />
+
+        <TextView
+            android:id="@+id/region"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView36"
+            android:layout_toStartOf="@+id/imageView20"
+            android:gravity="right"
+            android:paddingBottom="10dp"
+            android:text="Loading..."
+            android:textAlignment="gravity" />
+    </RelativeLayout>
+
+</LinearLayout>

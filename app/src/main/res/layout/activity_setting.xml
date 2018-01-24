@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView53"
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/space_up"
+            android:onClick="go_account"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignBaseline="@+id/textView53"
+            android:layout_alignBottom="@+id/textView53"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/space_one"
+            android:onClick="go_notify" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView52"
+            android:background="@drawable/space_middle"
+            android:onClick="go_general"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView54"
+            android:background="@drawable/space_bottom"
+            android:onClick="go_privacy"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_alignBottom="@+id/textView56"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerInside"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_above="@+id/textView56"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerInside"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_above="@+id/textView52"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:onClick="go_profile"
+            android:scaleType="centerInside"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_above="@+id/textView54"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/right" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView52"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="Account and Security"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView54"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="New Message Notifications" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView56"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="General"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView56"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="Privacy"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

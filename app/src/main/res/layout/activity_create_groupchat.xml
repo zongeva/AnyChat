@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/create_group_name"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/private_button"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/phone_num_slot"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^*()1234567890"
+            android:hint="Input name"
+            android:inputType="text"
+            android:maxLength="50" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/temp"
+            android:layout_marginTop="29dp"
+            android:gravity="center"
+            android:text="Create a group chat"
+            android:textColor="#3680BC"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="TextView"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/create_group_name"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout">
+
+
+        </RelativeLayout>
+
+        <RadioButton
+            android:id="@+id/public_button"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_above="@+id/create_group_name"
+            android:layout_alignStart="@+id/create_group_name"
+            android:text="Public"
+            android:textColor="#3680BC" />
+
+        <RadioButton
+            android:id="@+id/private_button"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignEnd="@+id/create_group_name"
+            android:layout_below="@+id/textView11"
+            android:layout_marginTop="59dp"
+            android:checked="true"
+            android:text="Private"
+            android:textColor="#3680BC" />
+
+        <Button
+            android:id="@+id/create_group_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/layout_button"
+            android:onClick="go_create_group"
+            android:text="Create"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/keyword1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Keyword #1" />
+
+        <EditText
+            android:id="@+id/keyword2"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/keyword1"
+            android:layout_below="@+id/keyword1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Keyword #2" />
+
+        <EditText
+            android:id="@+id/keyword3"
+            android:layout_marginTop="8dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/keyword2"
+            android:layout_below="@+id/keyword2"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Keyword #3" />
+
+        <TextView
+            android:id="@+id/textView87"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/create_group_name"
+            android:text="Keyword is for quick searching purpose." />
+    </RelativeLayout>
+
+</LinearLayout>

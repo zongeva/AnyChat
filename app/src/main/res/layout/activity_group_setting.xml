@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="Group settings"
+            android:textColor="#3680BC"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/change_group_name"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/change_avatar"
+            android:background="@drawable/phone_num_slot"
+            android:text="Group name"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/setting_group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_above="@+id/group_member_list"
+            android:layout_toStartOf="@+id/imageView5"
+            android:gravity="right"
+            android:paddingBottom="8dp"
+            android:text="Current group name"
+            android:textAlignment="gravity" />
+
+        <TextView
+            android:id="@+id/group_member_list"
+            android:layout_width="match_parent"
+
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/change_group_name"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/phone_num_slot"
+            android:onClick="go_group_member_list"
+            android:text="Group member list"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/group_notification"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/phone_num_slot"
+            android:text="Group request"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/group_notification"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/group_member_list"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/phone_num_slot"
+            android:gravity=""
+            android:text="Notification settings"
+            android:onClick="go_group_notification"
+
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_above="@+id/group_member_list"
+            android:layout_alignEnd="@+id/textView18"
+            android:layout_alignTop="@+id/change_group_name"
+            android:layout_marginEnd="9dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/right"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_above="@+id/group_notification"
+            android:layout_alignStart="@+id/imageView5"
+            android:layout_alignTop="@+id/group_member_list"
+            android:onClick="go_group_member_list"
+            app:srcCompat="@drawable/right" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignBottom="@+id/group_notification"
+            android:layout_alignEnd="@+id/imageView6"
+            android:layout_alignStart="@+id/imageView6"
+            android:layout_alignTop="@+id/group_notification"
+            android:onClick="go_group_notification"
+            app:srcCompat="@drawable/right" />
+
+        <ToggleButton
+            android:id="@+id/toggle_verification"
+            android:layout_width="30dp"
+            android:layout_height="19dp"
+            android:layout_alignBottom="@+id/textView14"
+            android:layout_alignEnd="@+id/imageView7"
+            android:layout_margin="10dp"
+            android:background="@drawable/toogle_selector"
+            android:checked="false"
+            android:onClick="go_group_verification"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <Button
+            android:id="@+id/delete_group"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_button"
+            android:onClick="go_remove_group"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView14"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Toogle On - Require verification to join"
+            android:textColor="#3680BC"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/notification_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView14"
+            android:layout_toStartOf="@+id/imageView7"
+            android:gravity="right"
+            android:paddingBottom="8dp"
+            android:text="Loading..."
+            android:textAlignment="gravity" />
+
+        <Button
+            android:id="@+id/change_avatar"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/group_avatar"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/layout_button"
+            android:onClick="change_avatar"
+            android:text="Change"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/group_avatar"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_below="@+id/textView15"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/vim_icon_default_group" />
+
+        <ImageButton
+            android:id="@+id/generate_QR_code_btn"
+            android:onClick="go_generateQR"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="140dp"
+            android:layout_alignTop="@+id/group_avatar"
+            android:layout_toEndOf="@+id/group_avatar"
+            android:scaleType="fitXY"
+            android:src="@drawable/qr"
+            android:background="@android:color/transparent" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

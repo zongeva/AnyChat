@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bubble_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+
+    android:weightSum="1">
+
+    <ProgressBar
+        android:id="@+id/progress_chat_receive"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/receiver_box"
+        android:paddingLeft="5dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/receiver_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progress_chat_receive"
+        android:layout_alignStart="@+id/receiver_box"
+        android:layout_gravity="center"
+        android:maxEms="12"
+        android:text="Nickname"
+        android:textColor="#A9AD9C" />
+
+    <ImageView
+        android:id="@+id/avatar_onclick_video"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/vim_icon_default_user" />
+
+    <RelativeLayout
+
+
+        android:id="@+id/receiver_box"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/receiver_nickname"
+        android:layout_gravity="left"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="10dp"
+
+        android:layout_toEndOf="@+id/avatar_onclick_video"
+        android:layout_weight="0.12"
+        android:background="@drawable/chatbubble"
+        android:backgroundTint="#eaeaea"
+        android:longClickable="true"
+        android:minHeight="53dp">
+
+        <ImageView
+            android:id="@+id/image_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+
+            app:srcCompat="@color/transparent" />
+
+        <TextView
+            android:id="@+id/receiver_burnchat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/receiver_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/video_player_receiver"
+            android:layout_below="@+id/video_player_receiver"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="10dp"
+            android:text="Timestamp"
+
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/video_player_receiver"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/image_received"
+            app:srcCompat="@drawable/alert" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/receiver_burnchat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/play" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

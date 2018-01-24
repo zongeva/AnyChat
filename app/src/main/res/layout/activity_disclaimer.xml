@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="Join U Can Chat"
+            android:textStyle="bold"
+            android:textColor="#3680BC"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="By Signing up, you agree to our Terms and that you have read our Privacy Policy, including our Cookie Use. You may receive SMS Notifications from U Can Chat and can opt out at any time."
+            android:textStyle="normal"
+            android:textColor="#3680BC"
+            android:textSize="15dp"/>
+
+
+        <Button
+            android:id="@+id/btn_getStarted"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="3dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/layout_button"
+
+            android:text="Get Started"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/llBottomContainer2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/btn_alreadyhaveaccount"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#ffffff"
+            android:text="Already have an account?"
+            android:textColor="#3680BC"
+            android:gravity="bottom|center"/>
+    </LinearLayout>
+</LinearLayout>
+

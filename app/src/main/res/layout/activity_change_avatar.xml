@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/create_group_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="Change Avatar"
+        android:textColor="#3680BC"
+        android:textSize="25dp"
+        android:textStyle="normal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_below="@+id/textView15"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/vim_icon_default_user" />
+
+        <Button
+            android:id="@+id/change_avatar"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/layout_button"
+            android:onClick="change_avatar"
+            android:text="Change"
+            android:textColor="@color/white"
+            android:layout_below="@+id/user_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/change_avatar"
+            android:layout_below="@+id/change_avatar"
+            android:layout_marginTop="26dp"
+            android:text="Disclaimer" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView42"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="UCC reserves the right to change, modify, add, or delete clauses of Uploaded Avatar, By uploading the avatar,  you agree not to interrupt or attempt to interrupt the operation of the Services in any way. While UCC Would not responsible for any legal issue in anyway."
+            android:textAlignment="gravity" />
+
+
+    </RelativeLayout>
+</LinearLayout>

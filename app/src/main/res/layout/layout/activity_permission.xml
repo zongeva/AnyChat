@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#04335A">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-16dp"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="UCC"
+            android:textColor="#ffffff"
+            android:textSize="38dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:text="Please allow the following"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_add_a_photo_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Camera"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/ap_tv1"
+                    android:layout_toRightOf="@+id/iv1"
+                    android:text="Required camera to shoot awesome photo"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_gps_fixed_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Location"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Required to locate yourself"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_folder_open_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="File System"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Required to save your personal info"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_network_wifi_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="WiFi"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Required to send and receive message"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_stay_current_portrait_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Phone"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Required to for app working"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ap_iv6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_storage_white_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ap_iv6"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Storage"
+                    android:textColor="@color/white70"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Required to save your message history"
+                    android:textColor="@color/white70"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/layout_button"
+                android:id="@+id/ap_button1"
+                android:text="Complete"
+                android:textColor="@color/white" />
+            />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Insert Your Full Name"
+            android:textColor="#3680BC"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/et_firstName"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.39"
+                android:maxLength="40"
+
+                android:background="@drawable/phone_num_slot"
+                android:hint="First name"
+                android:inputType="textEmailAddress"
+
+
+                />
+
+            <EditText
+                android:id="@+id/et_lastName"
+                android:maxLength="40"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.49"
+                android:background="@drawable/phone_num_slot"
+                android:hint="Last name"
+                android:inputType="textEmailAddress"
+
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/layout_button"
+            android:text="Continue"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBottomContainer2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/btn_alreadyhaveaccount"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="#ffffff"
+            android:text="Already have an account?"
+            android:textColor="#3680BC"
+            android:gravity="bottom|center"/>
+    </LinearLayout>
+</LinearLayout>
+
+
