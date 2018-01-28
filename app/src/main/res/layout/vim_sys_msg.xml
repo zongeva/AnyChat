@@ -23,6 +23,6 @@
         android:id="@+id/tv_sysmsg"
         android:textSize="12sp"
         android:textColor="@color/vim_white"
-        android:background="@drawable/corner_shape"
+        android:background="@color/transparent"
         android:layout_gravity="center_horizontal"/>
 </LinearLayout>

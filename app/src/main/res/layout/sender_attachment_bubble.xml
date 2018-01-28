@@ -30,7 +30,7 @@ android:layout_marginBottom="5dp"
         android:layout_weight="0.12"
 
         android:background="@drawable/chatbubble"
-        android:backgroundTint="#057eff"
+        android:backgroundTint="#eaeaea"
         android:longClickable="true"
         android:minHeight="53dp"
         android:paddingRight="8dp">
@@ -60,7 +60,7 @@ android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:gravity="bottom"
             android:text="Timestamp"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="10dp" />
 
         <TextView
@@ -70,7 +70,7 @@ android:layout_marginBottom="5dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="Attachment"
-            android:textColor="@color/white" />
+            android:textColor="#000000" />
 
         <ImageView
             android:id="@+id/sender_attachment_download"
@@ -90,7 +90,7 @@ android:layout_marginBottom="5dp"
             android:layout_above="@+id/sender_timestamp"
             android:layout_alignStart="@+id/sender_attachment_name"
             android:text="Attachment KB"
-            android:textColor="@color/white" />
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/sender_attachment_name"
@@ -100,7 +100,7 @@ android:layout_marginBottom="5dp"
             android:layout_alignTop="@+id/sender_attachment_download"
             android:layout_toEndOf="@+id/textView8"
             android:text="Filename"
-            android:textColor="@color/white"
+            android:textColor="#000000"
             android:textSize="12dp" />
 
     </RelativeLayout>

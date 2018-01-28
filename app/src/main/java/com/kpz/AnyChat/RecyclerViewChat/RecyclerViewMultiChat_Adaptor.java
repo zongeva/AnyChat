@@ -950,7 +950,7 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                         switch (msgTip.getOprType()) {
                             case 0:
                                 (((TipsViewHolder) holder)).tv_sysmsg.setText(userinfo + " Had Join The Group");
-                                String url_join_group = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
+                                //String url_join_group = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
 //                                Http_GetToken gt = new Http_GetToken(context, 8, url_join_group, ids, (((RecyclerViewMultiChat_Adaptor.TipsViewHolder) holder)).temp, deviceId, group_ID, "", "");
 //                                gt.execute();
                                 break;
@@ -971,8 +971,8 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                                 (((TipsViewHolder) holder)).tv_sysmsg.setText(userinfo + " Removed by " + oprname);
                                 break;
                             case 5:
-                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
-                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
+//                                (((TipsViewHolder) holder)).background.setVisibility(View.INVISIBLE);
+//                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.INVISIBLE);
                                 break;
                         }
                 }

@@ -137,7 +137,7 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recyclerview_chatbase);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final EditText inputwindow = (EditText) findViewById(R.id.inputmessage);
         final SwipeRefreshLayout swipeView = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
@@ -162,7 +162,6 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
 
 
         long msgID = 0;

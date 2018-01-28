@@ -1,6 +1,7 @@
 package com.kpz.AnyChat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,6 +47,54 @@ public class LoginActivity extends AppCompatActivity {
 //        final AuthService authService = null;
         final AuthService authService = defaultClient.getAuthService();
 
+        if(authService.getLastLoginInfo() != null){
+            Log.e("test", " Last Login Info User ID = " + authService.getLastLoginInfo().getUserID());
+
+            SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+            if (prefs.getString("shared_login_password", null) != null){
+                authService.autoLogin(authService.getLastLoginInfo().getUserID(), server, new ResultCallBack<Long, Void, Void>() {
+                    @Override
+                    public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
+                        Log.e("test", " Auto Login Success User ID " + authService.getLastLoginInfo().getUserID());
+
+                        LoginActivity.this.startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        finish();
+                    }
+
+                    @Override
+                    public void onError(int i, String s) {
+                        Log.e("test", "Auto Login Failed User ID " + authService.getLastLoginInfo().getUserID());
+
+                    }
+                });
+            }
+            else {
+                prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                if (prefs.getString("shared_login_password", null) != null) {
+
+                    String shared_login_password = prefs.getString("shared_login_password", "");//"No name defined" is the default value.
+
+                    authService.offlineLogin(authService.getLastLoginInfo().getUserID(), shared_login_password, server, new ResultCallBack() {
+                        @Override
+                        public void onSuccess(Object o, Object o2, Object o3) {
+                            Log.e("test", "Offline Login Success User ID " + authService.getLastLoginInfo().getUserID());
+
+                            LoginActivity.this.startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                            finish();
+                        }
+
+                        @Override
+                        public void onError(int i, String s) {
+                            Log.e("test", "1101009 Offline Login Failed User ID " + authService.getLastLoginInfo().getUserID());
+                        }
+                    });
+                } else {
+//                    mView.dismiss();
+                    Log.e("test", "Offline Login Failed due to password no found");
+                }
+            }
+        }
+
         btn_createnewaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,15 +111,23 @@ public class LoginActivity extends AppCompatActivity {
                     byte accountType = 1;
                     String hpnum = et_hpnum.getText().toString();
                     String hpnumCountry = "006" + hpnum;
-                    String password = et_password.getText().toString();
+                    final String password = et_password.getText().toString();
                     //Toast.makeText(LoginActivity.this, hpnumCountry, Toast.LENGTH_SHORT).show();
 
                     authService.login(accountType, hpnumCountry, password, server, new ResultCallBack<Long, Void, Void>() {
                         @Override
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
-                            //go to chat
+                            //go to chat list
+                            SharedPreferences.Editor editor = LoginActivity.this.getSharedPreferences(MY_PREFS_NAME, LoginActivity.this.MODE_PRIVATE).edit();
+                            editor.putString("shared_login_countrycode", "006");
+                            editor.putString("shared_login_contactno", et_hpnum.getText().toString());
+                            editor.putString("shared_login_password", password);
+                            editor.apply();
+
+
                             Toast.makeText(LoginActivity.this, "Log in success", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            Log.e("test kr id", aLong.toString());
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
@@ -78,6 +135,11 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onError(int i, String s) {
                             Log.e("test", "Authentication fail" + " " + i + " " + s);
+                            if (i==112)
+                            {
+                                Toast.makeText(LoginActivity.this, "Incorrect number or password", Toast.LENGTH_SHORT).show();
+
+                            }
                         }
                     });
 

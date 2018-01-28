@@ -51,7 +51,7 @@ public class Request_Permission extends Activity {
             //This is called if user has denied the permission before
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
                 ActivityCompat.requestPermissions(this, PERMISSIONS, requestCode);
-                Log.e("UCC Log", "Code: 1001001 Some required has been denied before but request again");
+                Log.e("UCC Log", "Code: 1001001 Some required has been denied before but request again.");
             } else {
                 ActivityCompat.requestPermissions(this, PERMISSIONS, requestCode);
                 Log.e("UCC Log", "Code: 1001002 Some permission haven't granted.");

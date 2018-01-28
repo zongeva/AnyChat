@@ -32,7 +32,7 @@
         android:layout_toEndOf="@+id/avatar_onclick_reply"
         android:layout_weight="0.12"
         android:background="@drawable/chatbubble"
-        android:backgroundTint="#eaeaea"
+        android:backgroundTint="#d3d3d3"
         android:longClickable="true"
         android:minHeight="53dp">
 

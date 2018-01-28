@@ -47,6 +47,7 @@ import com.luseen.luseenbottomnavigation.BottomNavigation.BottomNavigationView;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.api.Constants;
 import com.vrv.imsdk.chatbean.ChatMsg;
+import com.vrv.imsdk.chatbean.ChatMsgBuilder;
 import com.vrv.imsdk.listener.ReceiveMsgListener;
 import com.vrv.imsdk.listener.ReceiverChatListener;
 import com.vrv.imsdk.model.Account;
@@ -92,6 +93,8 @@ public class HomeActivity extends AppCompatActivity {
 //        mView.dismiss();
         RequestHelper.login_status(HomeActivity.this);
 
+
+
         final long selfid = RequestHelper.getAccountInfo().getID();
         final Account account = new Account();
         if(String.valueOf(selfid) != RequestHelper.getAccountInfo().getName().toString()) {
@@ -128,14 +131,42 @@ public class HomeActivity extends AppCompatActivity {
 //                Intent intent = new Intent(HomeActivity.this, SystemBoxActivity.class);
 //                App.finishApp(HomeActivity.this);
 //                startActivity(intent);
+
+                long krid = 9151316648393694037L;
+                ChatMsgBuilder builder = new ChatMsgBuilder(krid);
+
+                ChatMsg msgtest = builder.createTxtMsg("asdasdsaqwrqwrq test");
+                chatService.sendMsg(msgtest, new ResultCallBack<Void, Void, Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid, Void aVoid2, Void aVoid3) {
+                        Toast.makeText(HomeActivity.this, "Message sent successfully", Toast.LENGTH_SHORT);
+                    }
+
+                    @Override
+                    public void onError(int i, String s) {
+
+                    }
+                }, new ResultCallBack<Integer, Integer, String>() {
+                    @Override
+                    public void onSuccess(Integer integer, Integer integer2, String s) {
+
+                    }
+
+                    @Override
+                    public void onError(int i, String s) {
+
+                    }
+                });
             }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, CreateGroupChat.class);
-                startActivity(intent);
+//                Intent intent = new Intent(HomeActivity.this, CreateGroupChat.class);
+//                startActivity(intent);
+
+
             }
         });
 
