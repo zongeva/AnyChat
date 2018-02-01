@@ -48,7 +48,7 @@ public class Profile_Setting_Home extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView me_nick = (TextView) findViewById(R.id.me_nickname);
         TextView me_ld = (TextView) findViewById(R.id.me_linkdood);
-        TextView energy = (TextView)findViewById(R.id.energies);
+        //TextView energy = (TextView)findViewById(R.id.energies);
         ImageView avatar = (ImageView) findViewById(R.id.imageView);
         ImageView mpplus = (ImageView) findViewById(R.id.mpplus);
         ImageView go_profile = (ImageView) findViewById(R.id.go_profile);

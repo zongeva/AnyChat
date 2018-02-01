@@ -31,7 +31,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/openpopup"
             android:layout_marginRight="7dp"
-            android:background="@drawable/send1"
+            android:background="@drawable/sendlogo"
             android:onClick="send_message"
             android:visibility="visible" />
 
@@ -73,7 +73,8 @@
             android:layout_toEndOf="@+id/image"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/voice" />
+            android:src="@drawable/voice"
+            android:visibility="invisible"/>
 
         <EditText
             android:id="@+id/messageEditText"
@@ -84,7 +85,7 @@
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="40dp"
-            android:layout_toRightOf="@+id/voice"
+            android:layout_toRightOf="@+id/image"
             android:background="@drawable/layout_bgs"
             android:hint="Ab"
 

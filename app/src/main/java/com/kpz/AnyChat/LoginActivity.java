@@ -16,6 +16,7 @@ import com.vrv.imsdk.VIMClient;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SDKClient;
+import com.vrv.imsdk.model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void onError(int i, String s) {
-                            Log.e("test", "1101009 Offline Login Failed User ID " + authService.getLastLoginInfo().getUserID());
+                            Log.e("test", "Offline Login Failed User ID " + authService.getLastLoginInfo().getUserID());
                         }
                     });
                 } else {
@@ -124,8 +125,10 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("shared_login_password", password);
                             editor.apply();
 
+                            User user = new User();
+                            //user.setName("zong");
 
-                            Toast.makeText(LoginActivity.this, "Log in success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + user.getName(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             Log.e("test kr id", aLong.toString());
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

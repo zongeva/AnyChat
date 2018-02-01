@@ -85,7 +85,7 @@
             android:layout_alignStart="@+id/me_nickname"
 
             android:text="XP :  Loading..."
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView21"
@@ -232,14 +232,7 @@
             <!--android:text="Me" />-->
         </RadioGroup>
 
-        <TextView
-            android:id="@+id/energies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/me_linkdood"
-            android:layout_toEndOf="@+id/me_linkdood"
-            android:layout_marginLeft="10dp"
-            android:text="MP : Loading..." />
+
 
         <ImageView
             android:id="@+id/imageView26"
@@ -269,14 +262,7 @@
             android:text="Get free MP"
             android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/mpplus"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:layout_alignTop="@+id/energies"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/energies"
-            app:srcCompat="@drawable/mp" />
+
     </RelativeLayout>
 
 

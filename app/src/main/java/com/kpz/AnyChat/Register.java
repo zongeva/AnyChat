@@ -9,10 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.R;
 import com.vrv.imsdk.ClientManager;
+import com.vrv.imsdk.bean.PersonalData;
+import com.vrv.imsdk.model.AccountService;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
+import com.vrv.imsdk.model.User;
+import com.vrv.imsdk.model.UserService;
+
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Register extends AppCompatActivity {
 
@@ -21,6 +30,7 @@ public class Register extends AppCompatActivity {
     EditText et_phonenumber;
     EditText et_password;
     EditText et_veriCode;
+    EditText et_nickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +42,7 @@ public class Register extends AppCompatActivity {
         et_phonenumber = (EditText) findViewById(R.id.et_phonenumber);
         et_password = (EditText) findViewById(R.id.et_password);
         et_veriCode = (EditText) findViewById(R.id.et_veriCode);
+        et_nickname = (EditText) findViewById(R.id.et_nickname);
 
         final byte userType = 1;
         final String server = "im.linkdood.com";
@@ -41,6 +52,8 @@ public class Register extends AppCompatActivity {
         //final String veriCode = et_veriCode.getText().toString();
 
         final AuthService authService = ClientManager.getDefault().getAuthService();
+        final AccountService accountService = ClientManager.getDefault().getAccountService();
+        final UserService userService = ClientManager.getDefault().getUserService();
 
 
         btn_requestVeriCode.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +108,11 @@ public class Register extends AppCompatActivity {
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
                             Toast.makeText(Register.this,"Account created", Toast.LENGTH_SHORT).show();
                             Register.this.startActivity(new Intent(Register.this, LoginActivity.class));
+                            User user = new User();
+
+                            user.setName(et_nickname.getText().toString());
+
+
 
                         }
 
