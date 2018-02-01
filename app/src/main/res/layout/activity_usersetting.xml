@@ -55,7 +55,7 @@
             android:layout_alignStart="@+id/avatar"
             android:layout_below="@+id/me_nickname"
             android:text="XP :  ..."
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/mp"
@@ -63,7 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/avatar"
             android:layout_below="@+id/me_nickname"
-            android:text="MP : ..." />
+            android:text="MP : ..."
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/changepw_container"
@@ -104,7 +105,8 @@
             android:layout_below="@+id/birthday_container"
             android:background="@drawable/space_middle"
             android:onClick="go_changepw"
-            android:text="" />
+            android:text=""
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/whatsup_container"
@@ -114,14 +116,15 @@
             android:layout_below="@+id/regoin_container"
             android:background="@drawable/space_middle"
             android:onClick="go_changepw"
-            android:text="" />
+            android:text=""
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/notification_container"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/whatsup_container"
+            android:layout_below="@+id/birthday_container"
             android:background="@drawable/space_middle"
             android:onClick="go_changepw"
             android:text="" />
@@ -166,7 +169,7 @@
             android:layout_below="@+id/whatsup_container"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="75dp"
-            android:text="@string/version" />
+            android:text="" />
 
         <ImageView
             android:id="@+id/mpplus"
@@ -174,7 +177,8 @@
             android:layout_height="20dp"
             android:layout_above="@+id/me_nickname"
             android:layout_toEndOf="@+id/avatar"
-            app:srcCompat="@drawable/mp" />
+            app:srcCompat="@drawable/mp"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/textView89"

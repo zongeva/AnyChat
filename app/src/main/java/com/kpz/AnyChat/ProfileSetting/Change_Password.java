@@ -46,7 +46,7 @@ public class Change_Password extends AppCompatActivity {
         final EditText newpw1 = (EditText) findViewById(R.id.newpw1);
         final EditText newpw2 = (EditText) findViewById(R.id.newpw2);
         Button changpw = (Button) findViewById(R.id.changepw);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 

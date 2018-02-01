@@ -11,8 +11,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.kpz.AnyChat.Home_Activity.HomeActivity;
+import com.kpz.AnyChat.Others.RequestCallBack;
+import com.kpz.AnyChat.Others.RequestHelper;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.VIMClient;
+import com.vrv.imsdk.model.Account;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SDKClient;
@@ -125,10 +128,19 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("shared_login_password", password);
                             editor.apply();
 
-                            User user = new User();
+                            //User user = new User();
                             //user.setName("zong");
+                            Account account = new Account();
+                            account.setAccount(RequestHelper.getMainAccount().getAccount());
+                            //account.setName("zong");
+//                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
+//                                @Override
+//                                public void handleSuccess(Object o, Object o2, Object o3) {
+//
+//                                }
+//                            });
 
-                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + user.getName(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + account.getName(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             Log.e("test kr id", aLong.toString());
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

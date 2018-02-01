@@ -79,6 +79,41 @@
             android:name=".RecyclerViewChat.Chat_RecyclerView_Activity"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".ProfileSetting.Change_Avatar"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_Home"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ProfileSetting.Profile_Setting_Personal"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_AccoutSec"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_Birthday"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ProfileSetting.Profile_Setting_ChgGender"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_New"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_Setting"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.ChangePasswordVerifyCode"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Profile_Setting_Notification"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ProfileSetting.Change_Password"
+            android:screenOrientation="portrait" />
+
+
+
 
     </application>
 

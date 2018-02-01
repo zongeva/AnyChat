@@ -13,6 +13,7 @@ import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.R;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.bean.PersonalData;
+import com.vrv.imsdk.model.Account;
 import com.vrv.imsdk.model.AccountService;
 import com.vrv.imsdk.model.AuthService;
 import com.vrv.imsdk.model.ResultCallBack;
@@ -87,10 +88,11 @@ public class Register extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String account = et_phonenumber.getText().toString();
+                final String account = et_phonenumber.getText().toString();
                 String accountCountry = "006" + et_phonenumber.getText().toString();
                 String password = et_password.getText().toString();
                 String veriCode = et_veriCode.getText().toString();
+                final String nickName = et_nickname.getText().toString();
                 if(account == ""){
                     Toast.makeText(Register.this,"Please enter your phone number", Toast.LENGTH_SHORT).show();
                 }
@@ -108,9 +110,11 @@ public class Register extends AppCompatActivity {
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
                             Toast.makeText(Register.this,"Account created", Toast.LENGTH_SHORT).show();
                             Register.this.startActivity(new Intent(Register.this, LoginActivity.class));
-                            User user = new User();
+//                            Account accountNew = new Account();
+//                            accountNew.setAccount(RequestHelper.getMainAccount().getAccount());
+//                            accountNew.setName(nickName);
+//                            RequestHelper.updateAccountInfo();
 
-                            user.setName(et_nickname.getText().toString());
 
 
 
