@@ -112,6 +112,9 @@
         <activity android:name=".ProfileSetting.Change_Password"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".Group_Chat.CreateGroupChat"
+            android:screenOrientation="portrait" />
+
 
 
 

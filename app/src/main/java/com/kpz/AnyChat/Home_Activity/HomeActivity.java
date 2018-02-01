@@ -163,8 +163,8 @@ public class HomeActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, CreateGroupChat.class);
-//                startActivity(intent);
+               Intent intent = new Intent(HomeActivity.this, CreateGroupChat.class);
+               startActivity(intent);
 
 
             }

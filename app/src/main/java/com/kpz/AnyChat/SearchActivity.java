@@ -39,7 +39,9 @@ import com.vrv.imsdk.bean.OrgGroupInfo;
 import com.vrv.imsdk.bean.OrgUserInfo;
 import com.vrv.imsdk.bean.SearchResult;
 import com.vrv.imsdk.chatbean.ChatMsgApi;
+import com.vrv.imsdk.model.GroupService;
 import com.vrv.imsdk.model.ResultCallBack;
+import com.vrv.imsdk.model.SearchService;
 import com.vrv.imsdk.model.TinyGroup;
 
 import java.util.ArrayList;
@@ -48,7 +50,7 @@ import java.util.Map;
 
 public class SearchActivity extends BaseActivity implements ChatCallback {
     private SearchListAdapter adapter;
-    private List<BaseInfoBean> list = new ArrayList<BaseInfoBean>();
+    private ArrayList<ResultModel> list = new ArrayList<ResultModel>();
     private ArrayList<ResultModel> searchlist = new ArrayList<ResultModel>();
     private EditText editText;
     private Button button;
@@ -85,7 +87,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
     @Override
     protected void setViews() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Group Search");
     }
 
@@ -156,6 +158,31 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 //            }
 //        });
 //        tga.execute();
+
+        SearchService searchService = ClientManager.getDefault().getSearchService();
+        RequestHelper.searchFromNet(key, new RequestCallBack<SearchResult, Void, Void>() {
+            @Override
+            public void handleSuccess(SearchResult searchResult, Void aVoid, Void aVoid2) {
+                adapter = new SearchListAdapter(SearchActivity.this, list);
+                listView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+                searchlist = list;
+
+                listView.setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        if (!searchlist.get(position).groupid.equals("")) {
+                            adds(searchlist.get(position));
+
+                        } else{
+                            Toast.makeText(context, "Empty ID " + searchlist.get(position).groupid, Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+            }
+        });
 
 
     }

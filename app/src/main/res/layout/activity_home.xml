@@ -54,7 +54,8 @@
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/searchgroup"
             android:backgroundTint="@color/transparent"
-            app:srcCompat="@mipmap/ic_menu_scan" />
+            app:srcCompat="@mipmap/ic_menu_scan"
+            android:visibility="invisible"/>
 
 
         <ImageButton
@@ -67,7 +68,7 @@
             android:layout_toStartOf="@+id/scanqr"
             android:backgroundTint="@color/transparent"
             app:srcCompat="@mipmap/ic_menu_notify_empty"
-            android:visibility="visible"/>
+            android:visibility="invisible"/>
 
         <ImageButton
             android:id="@+id/profile"
