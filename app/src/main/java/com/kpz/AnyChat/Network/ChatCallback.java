@@ -1,6 +1,6 @@
 package com.kpz.AnyChat.Network;
 
-import com.kpz.AnyChat.Group_Chat.ResultModel;
+import com.kpz.AnyChat.Others.BaseInfoBean;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public interface ChatCallback {
 
-        void handleReturnData(ArrayList<ResultModel> list);
+        void handleReturnData(ArrayList<BaseInfoBean> list);
 
 
 }

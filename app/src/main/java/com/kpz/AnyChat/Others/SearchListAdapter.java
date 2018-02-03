@@ -19,10 +19,10 @@ import java.util.List;
 public class SearchListAdapter extends BaseAdapter {
     private Context context;
     private List<BaseInfoBean> SearchList = new ArrayList<>();
-    private List<ResultModel> APISearchList = new ArrayList<>();
+    private List<BaseInfoBean> APISearchList = new ArrayList<>();
 
     String url;
-    public SearchListAdapter(Context context, List<ResultModel> APISearchList) {
+    public SearchListAdapter(Context context, List<BaseInfoBean> APISearchList) {
         this.context = context;
 
 //        this.SearchList = SearchList;

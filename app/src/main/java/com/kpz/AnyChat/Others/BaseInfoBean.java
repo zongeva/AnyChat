@@ -4,6 +4,7 @@ package com.kpz.AnyChat.Others;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.kpz.AnyChat.Group_Chat.ResultModel;
 import com.vrv.imsdk.chatbean.ChatMsg;
 import com.vrv.imsdk.chatbean.ChatMsgApi;
 import com.vrv.imsdk.model.Account;
@@ -13,7 +14,7 @@ import com.vrv.imsdk.model.Group;
 import com.vrv.imsdk.model.ItemModel;
 import com.vrv.imsdk.util.SDKFileUtils;
 
-public class BaseInfoBean implements Parcelable {
+public class BaseInfoBean extends ResultModel implements Parcelable {
 
     public static final byte TYPE_USER = 1;
     public static final byte TYPE_GROUP = 2;

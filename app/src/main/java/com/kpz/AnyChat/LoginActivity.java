@@ -130,12 +130,13 @@ public class LoginActivity extends AppCompatActivity {
 
                             //User user = new User();
                             //user.setName("zong");
-                            Account account = new Account();
+                            final Account account = new Account();
                             account.setAccount(RequestHelper.getMainAccount().getAccount());
-                            //account.setName("zong");
+//                            account.setName("zong");
 //                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
 //                                @Override
 //                                public void handleSuccess(Object o, Object o2, Object o3) {
+//                                    Toast.makeText(LoginActivity.this, "Update name success " + account.getName(), Toast.LENGTH_SHORT).show();
 //
 //                                }
 //                            });

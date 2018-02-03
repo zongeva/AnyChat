@@ -1,15 +1,11 @@
 package com.kpz.AnyChat;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +25,6 @@ import com.kpz.AnyChat.Others.RequestCallBack;
 import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.Others.SearchListAdapter;
 import com.kpz.AnyChat.Others.ToastUtil;
-import com.kpz.AnyChat.Others.Utils;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.api.Constants;
 import com.vrv.imsdk.bean.ContactVerifyType;
@@ -39,9 +34,7 @@ import com.vrv.imsdk.bean.OrgGroupInfo;
 import com.vrv.imsdk.bean.OrgUserInfo;
 import com.vrv.imsdk.bean.SearchResult;
 import com.vrv.imsdk.chatbean.ChatMsgApi;
-import com.vrv.imsdk.model.GroupService;
 import com.vrv.imsdk.model.ResultCallBack;
-import com.vrv.imsdk.model.SearchService;
 import com.vrv.imsdk.model.TinyGroup;
 
 import java.util.ArrayList;
@@ -49,9 +42,12 @@ import java.util.List;
 import java.util.Map;
 
 public class SearchActivity extends BaseActivity implements ChatCallback {
-    private SearchListAdapter adapter;
-    private ArrayList<ResultModel> list = new ArrayList<ResultModel>();
-    private ArrayList<ResultModel> searchlist = new ArrayList<ResultModel>();
+
+
+    private List<BaseInfoBean> list = new ArrayList<BaseInfoBean>();
+    private SearchListAdapter adapter = new SearchListAdapter(context, list);
+    private ArrayList<BaseInfoBean> searchlist = new ArrayList<BaseInfoBean>();
+
     private EditText editText;
     private Button button;
     private ListView listView;
@@ -121,75 +117,117 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
     private void searchNetContact(String key) {
 
-        TelephonyManager telephonyManager;
-        telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-        @SuppressLint("MissingPermission") String deviceId = telephonyManager.getDeviceId();
-        String ids = String.valueOf(RequestHelper.getAccountInfo().getID());
-        SharedPreferences prefs = this.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-        String shared_login_password = prefs.getString("shared_login_password", "");//"No name defined" is the default value.
-        String url_get_token = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
-//           public Http_TokenGroupAPI(Context context, int type, String url_token, String linkdoodid, List<String> datas, String deviceId, String param1, String param2, String param3) {
-        Log.e("URL Token ", url_get_token);
-//        Http_TokenGroupAPI tga = new Http_TokenGroupAPI(context, 1, url_get_token, ids, searchlist, deviceId, Utils.urlencode(key), "", "", new ChatCallback() {
-//            @Override
-//            public void handleReturnData(ArrayList<ResultModel> list) {
-//                Log.e("Error", "Check list size: " + list.size());
-//                Log.e("Error", "Check Slist size: " + searchlist.size());
+//        TelephonyManager telephonyManager;
+//        telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+//        @SuppressLint("MissingPermission") String deviceId = telephonyManager.getDeviceId();
+//        String ids = String.valueOf(RequestHelper.getAccountInfo().getID());
+//        SharedPreferences prefs = this.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+//        String shared_login_password = prefs.getString("shared_login_password", "");//"No name defined" is the default value.
+//        String url_get_token = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
+////           public Http_TokenGroupAPI(Context context, int type, String url_token, String linkdoodid, List<String> datas, String deviceId, String param1, String param2, String param3) {
+//        Log.e("URL Token ", url_get_token);
+////        Http_TokenGroupAPI tga = new Http_TokenGroupAPI(context, 1, url_get_token, ids, searchlist, deviceId, Utils.urlencode(key), "", "", new ChatCallback() {
+////            @Override
+////            public void handleReturnData(ArrayList<ResultModel> list) {
+////                Log.e("Error", "Check list size: " + list.size());
+////                Log.e("Error", "Check Slist size: " + searchlist.size());
+////
+////                adapter = new SearchListAdapter(SearchActivity.this, list);
+////                listView.setAdapter(adapter);
+////                adapter.notifyDataSetChanged();
+////                searchlist = list;
+////
+////                listView.setOnItemClickListener(new OnItemClickListener() {
+////                    @Override
+////                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+////
+////                        if (!searchlist.get(position).groupid.equals("")) {
+////                            adds(searchlist.get(position));
+////
+////                        } else{
+////                            Toast.makeText(context, "Empty ID " + searchlist.get(position).groupid, Toast.LENGTH_SHORT).show();
+////
+////                        }
+////                    }
+////                });
+////
+////            }
+////        });
+////        tga.execute();
 //
-//                adapter = new SearchListAdapter(SearchActivity.this, list);
-//                listView.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();
-//                searchlist = list;
-//
-//                listView.setOnItemClickListener(new OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                        if (!searchlist.get(position).groupid.equals("")) {
-//                            adds(searchlist.get(position));
-//
-//                        } else{
-//                            Toast.makeText(context, "Empty ID " + searchlist.get(position).groupid, Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    }
-//                });
-//
-//            }
-//        });
-//        tga.execute();
+//        SearchService searchService = ClientManager.getDefault().getSearchService();
+////        RequestHelper.searchFromNet(key, new RequestCallBack<SearchResult, Void, Void>() {
+////            @Override
+////            public void handleSuccess(SearchResult searchResult, Void aVoid, Void aVoid2) {
+////                adapter = new SearchListAdapter(SearchActivity.this, list);
+////                listView.setAdapter(adapter);
+////                adapter.notifyDataSetChanged();
+////                searchlist = list;
+////
+////                listView.setOnItemClickListener(new OnItemClickListener() {
+////                    @Override
+////                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+////
+////                        if (!searchlist.get(position).groupid.equals("")) {
+////                            adds(searchlist.get(position));
+////
+////                        } else{
+////                            Toast.makeText(context, "Empty ID " + searchlist.get(position).groupid, Toast.LENGTH_SHORT).show();
+////
+////                        }
+////                    }
+////                });
+////            }
+////        });
 
-        SearchService searchService = ClientManager.getDefault().getSearchService();
-        RequestHelper.searchFromNet(key, new RequestCallBack<SearchResult, Void, Void>() {
+        RequestHelper.searchFromNet(key, new RequestCallBack<SearchResult, Void, Void>(true, context) {
             @Override
             public void handleSuccess(SearchResult searchResult, Void aVoid, Void aVoid2) {
-                adapter = new SearchListAdapter(SearchActivity.this, list);
-                listView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                searchlist = list;
 
-                listView.setOnItemClickListener(new OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                List<BaseInfoBean> searchList = SearchResult2List(searchResult);
 
-                        if (!searchlist.get(position).groupid.equals("")) {
-                            adds(searchlist.get(position));
+                if (searchList != null && searchList.size() > 0) {
+                    list = searchList;
 
-                        } else{
-                            Toast.makeText(context, "Empty ID " + searchlist.get(position).groupid, Toast.LENGTH_SHORT).show();
+                    adapter = new SearchListAdapter(context, list);
+                    listView.setAdapter(adapter);
+                    listView.setOnItemClickListener(new OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            BaseInfoBean bean = list.get(position);
+                            userID = bean.getID();
+                            if (ChatMsgApi.isUser(userID)) {
+                                if (RequestHelper.isBuddy(userID)) {
 
+                                    Toast.makeText(context, "ID" + userID, Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    adds(bean);
+                                }
+                            } else if (ChatMsgApi.isGroup(userID)) {
+                                if (ClientManager.getDefault().getContactService().findItemByID(userID) != null) {
+                                    Toast.makeText(context, "ID" + userID, Toast.LENGTH_SHORT).show();
+                                } else {
+                                    adds(bean);
+                                }
+                            }
                         }
-                    }
-                });
+                    });
+
+                } else {
+                    listView.setVisibility(View.GONE);
+
+                }
             }
         });
-
-
     }
 
 
+
+
+
     @Override
-    public void handleReturnData(ArrayList<ResultModel> list) {
+    public void handleReturnData(ArrayList<BaseInfoBean> list) {
         Log.e("Error", "Check list size: " + list.size());
         searchlist = list;
 
