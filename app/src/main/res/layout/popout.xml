@@ -29,7 +29,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="onclickvideo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/video" />
+                android:src="@drawable/videomsg" />
 
             <ImageButton
                 android:id="@+id/document"
@@ -38,7 +38,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="onclickattachment"
                 android:scaleType="fitXY"
-                android:src="@drawable/attachment" />
+                android:src="@drawable/attachment1" />
 
             <ImageButton
                 android:id="@+id/toggleBurnChat"
@@ -48,7 +48,7 @@
                 android:onClick="toggleBurnChat"
                 android:scaleType="fitXY"
                 android:src="@drawable/toogle_burnchat_selector"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <ImageButton
                 android:id="@+id/tbc7"
@@ -57,7 +57,8 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="enable_freeze"
                 android:scaleType="fitXY"
-                android:src="@drawable/freeze" />
+                android:src="@drawable/freeze"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/tbc1"
@@ -66,7 +67,8 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="enable_blackout"
                 android:scaleType="fitXY"
-                android:src="@drawable/blackout" />
+                android:src="@drawable/blackout"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/eat_btn"
@@ -75,7 +77,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="go_eat_func"
                 android:scaleType="fitXY"
-
+                android:visibility="gone"
                 android:src="@drawable/pacman" />
 
             <ImageButton
@@ -85,7 +87,8 @@
                 android:backgroundTint="@android:color/transparent"
                 android:onClick="enable_tornado"
                 android:scaleType="fitXY"
-                android:src="@drawable/tornado" />
+                android:src="@drawable/tornado"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/tbc3"
@@ -93,7 +96,8 @@
                 android:layout_height="84dp"
                 android:backgroundTint="@android:color/transparent"
                 android:scaleType="fitXY"
-                android:src="@drawable/tbc" />
+                android:src="@drawable/tbc"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/tbc4"
@@ -101,7 +105,8 @@
                 android:layout_height="84dp"
                 android:backgroundTint="@android:color/transparent"
                 android:scaleType="fitXY"
-                android:src="@drawable/tbc" />
+                android:src="@drawable/tbc"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

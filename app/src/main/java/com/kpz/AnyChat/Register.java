@@ -115,6 +115,8 @@ public class Register extends AppCompatActivity {
 //                            accountNew.setName(nickName);
 //                            RequestHelper.updateAccountInfo();
 
+                            //problem: set nickname when registering
+
 
 
 

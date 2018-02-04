@@ -1392,10 +1392,12 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
 
     public void toggleBurnChat(View view) {
         if (burnChat == true) {
+            txtpopup = (EditText) findViewById(R.id.messageEditText);
+            inputwindow = (EditText) findViewById(R.id.inputmessage);
             txtpopup.setBackground(getDrawable(R.drawable.layout_bgs));
             inputwindow.setBackground(getDrawable(R.drawable.layout_bgs));
-            txtpopup.setHint("Ab");
-            inputwindow.setHint("Ab");
+            txtpopup.setHint("Type a message");
+            inputwindow.setHint("Type a message");
             burnChat = false;
             stunt = false;
             blackout = false;
@@ -1405,12 +1407,18 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
 //            Toast.makeText(this, "Burnchat", Toast.LENGTH_SHORT).show();
         } else {
             burnChat = true;
+            txtpopup = (EditText) findViewById(R.id.messageEditText);
+            inputwindow = (EditText) findViewById(R.id.inputmessage);
             txtpopup.setBackground(getDrawable(R.drawable.layout_burn));
             inputwindow.setBackground(getDrawable(R.drawable.layout_burn));
             popupWindow.dismiss();
-            Intent intent = new Intent( Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
-            intent.putExtra("user_group_id", othersideid);
-            startActivityForResult(intent, SELECT_GROUP_MEMBER);
+
+
+//            Intent intent = new Intent( Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
+//            intent.putExtra("user_group_id", othersideid);
+//            startActivityForResult(intent, SELECT_GROUP_MEMBER);
+
+
             txtpopup.setHint("Burn Chat Enabled");
 //            inputwindow.setHint("@Target");
 //            inputwindow.setText("BurnChat Sent");
@@ -1469,8 +1477,8 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
 
             txtpopup.setBackground(getDrawable(R.drawable.layout_bgs));
             inputwindow.setBackground(getDrawable(R.drawable.layout_bgs));
-            txtpopup.setHint("Ab");
-            inputwindow.setHint("Ab");
+            txtpopup.setHint("Type a message");
+            inputwindow.setHint("Type a message");
             popupWindow.dismiss();
         } else {
             txtpopup = (EditText) findViewById(R.id.messageEditText);
@@ -1483,8 +1491,8 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
             Intent intent = new Intent(Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
             intent.putExtra("user_group_id", othersideid);
             startActivityForResult(intent, SELECT_GROUP_MEMBER);
-            txtpopup.setHint("@Blackout Target");
-            inputwindow.setText("[BlackOut Effect Sent]");
+            txtpopup.setHint("Type a message");
+            inputwindow.setText("Type a message");
 
         }
 
@@ -1539,8 +1547,8 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
             tornado = false;
             txtpopup.setBackground(getDrawable(R.drawable.layout_bgs));
             inputwindow.setBackground(getDrawable(R.drawable.layout_bgs));
-            txtpopup.setHint("Ab");
-            inputwindow.setHint("Ab");
+            txtpopup.setHint("Type a message");
+            inputwindow.setHint("Type a message");
             popupWindow.dismiss();
         } else {
             txtpopup.setBackground(getDrawable(R.drawable.layout_bg));
@@ -1551,8 +1559,8 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
             Intent intent = new Intent(Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
             intent.putExtra("user_group_id", othersideid);
             startActivityForResult(intent, SELECT_GROUP_MEMBER);
-            txtpopup.setHint("@Tornado Target");
-            inputwindow.setText("[Tornado Effect Sent]");
+            txtpopup.setHint("Type a message");
+            inputwindow.setText("Type a message");
 
         }
     }
@@ -1677,7 +1685,7 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
                     tornado = false;
                     txtpopup.setBackground(getDrawable(R.drawable.layout_bgs));
                     inputwindow.setBackground(getDrawable(R.drawable.layout_bgs));
-                    chatMsg.setPreDefined("name;" + "98" + ";5;" + ";unread;" + mMember);
+                    //chatMsg.setPreDefined("name;" + "98" + ";5;" + ";unread;" + mMember);
 
                 } else if (burnChat == false) {
                     chatMsg.setBurn(false);
@@ -1973,7 +1981,7 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
             btnOpenPopup = (ImageButton) findViewById(R.id.openpopup);
             txtpopup = (EditText) findViewById(R.id.messageEditText);
             inputwindow = (EditText) findViewById(R.id.inputmessage);
-            txtpopup.setHint("Ab");
+            txtpopup.setHint("Type a message");
             txtpopup.setText("");
         }
     };

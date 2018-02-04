@@ -1886,34 +1886,34 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                 switch (chatMsg1.getMsgType()) {
                     case ChatMsgApi.TYPE_TEXT:
                         if (!isMe || isTaskMsg || isDelayMsg || isReceiptMsg) {
-                            items = new CharSequence[]{ copy, reply, forward, delete};
+                            items = new CharSequence[]{ copy, reply, delete};
                         } else if (isPrivacyMsg) {
 
                             items = new CharSequence[]{ reply,delete};
                         } else {
-                            items = new CharSequence[]{copy, forward,recall, delete};
+                            items = new CharSequence[]{copy,recall, delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_FILE:
                         if (!isMe || isPrivacyMsg) {
-                            items = new CharSequence[]{share,forward, reply, export, delete};
+                            items = new CharSequence[]{share, reply, export, delete};
                         } else {
-                            items = new CharSequence[]{share,forward, export, recall,delete};
+                            items = new CharSequence[]{share, export, recall,delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_IMAGE:
                     case ChatMsgApi.TYPE_MINI_VIDEO:
                         if (!isMe || isPrivacyMsg) {
-                            items = new CharSequence[]{share,forward, reply, export, delete};
+                            items = new CharSequence[]{share, reply, export, delete};
                         } else {
-                            items = new CharSequence[]{share,forward, export, recall,delete};
+                            items = new CharSequence[]{share, export, recall,delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_AUDIO:
                         if (!isMe) {
-                            items = new CharSequence[]{share,forward, export, reply, delete};
+                            items = new CharSequence[]{share, export, reply, delete};
                         } else {
-                            items = new CharSequence[]{share,forward, export,  recall, delete};
+                            items = new CharSequence[]{share, export,  recall, delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_CARD:
@@ -1922,17 +1922,17 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                     case ChatMsgApi.TYPE_WEB_LINK:
                     case ChatMsgApi.TYPE_CUSTOM_DYNAMIC:
                         if (!isMe || isPrivacyMsg || isTaskMsg || isDelayMsg || isReceiptMsg) {
-                            items = new CharSequence[]{share,forward, reply, delete};
+                            items = new CharSequence[]{share, reply, delete};
                         } else {
-                            items = new CharSequence[]{share,forward, recall,delete};
+                            items = new CharSequence[]{share, recall,delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_NEWS:
                     case ChatMsgApi.TYPE_TEMPL:
                         if (!isMe || isPrivacyMsg || isTaskMsg || isDelayMsg || isReceiptMsg) {
-                            items = new CharSequence[]{share,forward, reply, delete};
+                            items = new CharSequence[]{share, reply, delete};
                         } else {
-                            items = new CharSequence[]{share,forward, recall, delete};
+                            items = new CharSequence[]{share, recall, delete};
                         }
                         break;
                     case ChatMsgApi.TYPE_MULTI:

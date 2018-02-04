@@ -115,6 +115,8 @@
         <activity android:name=".Group_Chat.CreateGroupChat"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".Group_Chat.SelectGroupMemberActivity"
+            android:screenOrientation="portrait"/>
 
 
 

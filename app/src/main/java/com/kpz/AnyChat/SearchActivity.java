@@ -188,7 +188,9 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
                 if (searchList != null && searchList.size() > 0) {
                     list = searchList;
-
+                    //problem: the search list has the group, but the value empty?
+                    //search keyword: DanceClub
+                    //also same thing when click on the list item, the dialog shows group name null
                     adapter = new SearchListAdapter(context, list);
                     listView.setAdapter(adapter);
                     listView.setOnItemClickListener(new OnItemClickListener() {
@@ -202,7 +204,6 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
                             if (ChatMsgApi.isUser(userID)) {
                                 if (RequestHelper.isBuddy(userID)) {
-
 
                                     Toast.makeText(context, "ID" + userID, Toast.LENGTH_SHORT).show();
 
@@ -258,7 +259,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
-                    ResultModel bean = searchlist.get(position);
+                    BaseInfoBean bean = searchlist.get(position);
                     userID = Long.parseLong(bean.groupid);
 
                     if (ClientManager.getDefault().getContactService().findItemByID(userID) != null) {
@@ -273,11 +274,11 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
     }
 
 
-    private void adds(final ResultModel bean) {
+    private void adds(final BaseInfoBean bean) {
 
 
         AlertDialog.Builder builder = new Builder(context);
-        builder.setMessage("Request to join " + bean.name.toString() + "?");
+        builder.setMessage("Request to join " + bean.getName() + "?");
         builder.setTitle("Confirmation");
         builder.setPositiveButton("Yes", new OnClickListener() {
             @Override

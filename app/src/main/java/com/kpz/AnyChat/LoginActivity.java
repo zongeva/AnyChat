@@ -141,6 +141,8 @@ public class LoginActivity extends AppCompatActivity {
 //                                }
 //                            });
 
+                            //problem: retrieve nickname?
+
                             Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + account.getName(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             Log.e("test kr id", aLong.toString());
