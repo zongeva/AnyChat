@@ -82,8 +82,8 @@ public class SearchListAdapter extends BaseAdapter {
 
 
 
-        ResultModel bean = APISearchList.get(position);
-        holder.mTextView.setText(bean.name);
+        BaseInfoBean bean = APISearchList.get(position);
+        holder.mTextView.setText(bean.getName());
         Utils.loadHead(context,url,holder.mIvHead, R.mipmap.vim_icon_default_group );
 //        ImageUtil.loadViewLocalHead(context, bean.getIcon(), holder.mIvHead, R.mipmap.vim_icon_default_user);
         return convertView;

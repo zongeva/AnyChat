@@ -131,19 +131,22 @@ public class LoginActivity extends AppCompatActivity {
                             //User user = new User();
                             //user.setName("zong");
                             final Account account = new Account();
-                            account.setAccount(RequestHelper.getMainAccount().getAccount());
-//                            account.setName("zong");
+                            account.setID(aLong);
+                            //account.setName("zong");
 //                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
 //                                @Override
 //                                public void handleSuccess(Object o, Object o2, Object o3) {
-//                                    Toast.makeText(LoginActivity.this, "Update name success " + account.getName(), Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(LoginActivity.this, "set nick success " + account.getName(), Toast.LENGTH_SHORT).show();
 //
 //                                }
 //                            });
 
+                            //RequestHelper.getAccountInfo().getName();
+
+
                             //problem: retrieve nickname?
 
-                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + account.getName(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + RequestHelper.getAccountInfo().getName(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             Log.e("test kr id", aLong.toString());
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

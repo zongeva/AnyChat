@@ -284,7 +284,12 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
             @Override
             //isInGroup ( GroupID, MemberID)
             public void onClick(DialogInterface dialog, int which) {
-                long groupid = Long.parseLong(bean.groupid);
+                long groupid = 0;
+                try{
+                    groupid = Long.parseLong(bean.groupid);
+                }
+                catch(Exception e)
+                { }
                 if (RequestHelper.isInGroup(groupid, RequestHelper.getUserID())) {
                     ToastUtil.showShort(context, "You Already In The Group !");
                     Intent intent = new Intent(SearchActivity.this, ChatActivity.class);

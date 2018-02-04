@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.kpz.AnyChat.Others.RequestCallBack;
 import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.R;
 import com.vrv.imsdk.ClientManager;
@@ -62,7 +63,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
 
                 String accountCountry = "006" + et_phonenumber.getText().toString();
-                Toast.makeText(Register.this,"this part ok" + accountCountry, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Register.this,"this part ok" + accountCountry, Toast.LENGTH_SHORT).show();
 
                 authService.getRegCode(userType, server, accountCountry, new ResultCallBack<Integer, Void, Void>() {
                     @Override
@@ -110,12 +111,20 @@ public class Register extends AppCompatActivity {
                         public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
                             Toast.makeText(Register.this,"Account created", Toast.LENGTH_SHORT).show();
                             Register.this.startActivity(new Intent(Register.this, LoginActivity.class));
-//                            Account accountNew = new Account();
-//                            accountNew.setAccount(RequestHelper.getMainAccount().getAccount());
-//                            accountNew.setName(nickName);
-//                            RequestHelper.updateAccountInfo();
+                            Account accountNew = new Account();
+                            //accountNew.setAccount(RequestHelper.getMainAccount().getAccount());
+                            accountNew.setID(aLong);
+                            accountNew.setName(nickName);
+                            RequestHelper.updateAccountInfo(accountNew, new RequestCallBack() {
+                                @Override
+                                public void handleSuccess(Object o, Object o2, Object o3) {
+                                    Toast.makeText(Register.this, RequestHelper.getAccountInfo().getName()+"", Toast.LENGTH_SHORT).show();
+                                }
+                            });
 
                             //problem: set nickname when registering
+
+
 
 
 
