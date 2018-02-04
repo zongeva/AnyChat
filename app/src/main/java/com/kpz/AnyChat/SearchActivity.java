@@ -196,8 +196,13 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             BaseInfoBean bean = list.get(position);
                             userID = bean.getID();
+                            Toast.makeText(context, "bean" + bean.toString(), Toast.LENGTH_SHORT).show();
+                            Log.e("test bean", bean.toString());
+                            Log.e("test bean", bean.getName());
+
                             if (ChatMsgApi.isUser(userID)) {
                                 if (RequestHelper.isBuddy(userID)) {
+
 
                                     Toast.makeText(context, "ID" + userID, Toast.LENGTH_SHORT).show();
 
@@ -221,9 +226,6 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
             }
         });
     }
-
-
-
 
 
     @Override
@@ -275,7 +277,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
 
         AlertDialog.Builder builder = new Builder(context);
-        builder.setMessage("Request To Join " + bean.name + "?");
+        builder.setMessage("Request to join " + bean.name.toString() + "?");
         builder.setTitle("Confirmation");
         builder.setPositiveButton("Yes", new OnClickListener() {
             @Override
