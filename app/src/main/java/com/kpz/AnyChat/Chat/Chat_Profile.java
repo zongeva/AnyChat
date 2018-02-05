@@ -17,6 +17,7 @@ import com.kpz.AnyChat.Others.RequestCallBack;
 import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.Others.Utils;
 import com.kpz.AnyChat.R;
+import com.kpz.AnyChat.RecyclerViewChat.Chat_RecyclerView_Activity;
 import com.vrv.imsdk.model.Contact;
 
 import java.util.Objects;
@@ -138,7 +139,7 @@ public class Chat_Profile extends AppCompatActivity {
 
     public void go_message(View view) {
         othersideid = getIntent().getExtras().getLong("othersideid");
-        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        Intent intent = new Intent(getApplicationContext(), Chat_RecyclerView_Activity.class);
         intent.putExtra("othersideid", othersideid);
         startActivity(intent);
 
