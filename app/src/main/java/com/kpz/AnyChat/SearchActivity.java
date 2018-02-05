@@ -25,6 +25,7 @@ import com.kpz.AnyChat.Others.RequestCallBack;
 import com.kpz.AnyChat.Others.RequestHelper;
 import com.kpz.AnyChat.Others.SearchListAdapter;
 import com.kpz.AnyChat.Others.ToastUtil;
+import com.kpz.AnyChat.RecyclerViewChat.Chat_RecyclerView_Activity;
 import com.vrv.imsdk.ClientManager;
 import com.vrv.imsdk.api.Constants;
 import com.vrv.imsdk.bean.ContactVerifyType;
@@ -198,7 +199,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             BaseInfoBean bean = list.get(position);
                             userID = bean.getID();
-                            Toast.makeText(context, "bean" + bean.toString(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(context, "bean" + bean.toString(), Toast.LENGTH_SHORT).show();
                             Log.e("test bean", bean.toString());
                             Log.e("test bean", bean.getName());
 
@@ -284,25 +285,28 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
             @Override
             //isInGroup ( GroupID, MemberID)
             public void onClick(DialogInterface dialog, int which) {
+
                 long groupid = 0;
-                try{
-                    groupid = Long.parseLong(bean.groupid);
+                try {
+                    groupid = bean.getID();
+                } catch (Exception e) {
+
                 }
-                catch(Exception e)
-                { }
+
                 if (RequestHelper.isInGroup(groupid, RequestHelper.getUserID())) {
                     ToastUtil.showShort(context, "You Already In The Group !");
-                    Intent intent = new Intent(SearchActivity.this, ChatActivity.class);
-                    intent.putExtra("othersideid",groupid);
+                    Intent intent = new Intent(SearchActivity.this, Chat_RecyclerView_Activity.class);
+                    intent.putExtra("othersideid", groupid);
                     startActivity(intent);
 
                 } else {
                     if (ChatMsgApi.isUser(groupid)) {
-//                        addGroup();
+                        addBuddy();
 
                     } else if (ChatMsgApi.isGroup(groupid)) {
                         groupID = groupid;
-                        addGroup();
+                        addGroup(groupid);
+
                     }
                 }
             }
@@ -362,7 +366,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
             @Override
             public void handleSuccess(Byte aByte, Byte aByte2, Void aVoid) {
                 if (aByte != 1) {
-                    addGroup();
+                    addGroup(groupID);
                 } else {
                     ToastUtil.showShort(context, "Group Admin Deny Your Request");
                 }
@@ -370,14 +374,27 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
         });
     }
 
-    private void addGroup() {
+    private void addGroup(long  Groupid) {
         final String verifyInfo = "";
+        final long temp_id = Groupid;
 //        final String verifyInfo = RequestHelper.getAccountInfo().getName();
 
-        RequestHelper.addGroup(groupID, verifyInfo, new RequestCallBack() {
+        RequestHelper.addGroup(Groupid, verifyInfo, new RequestCallBack() {
             @Override
             public void handleSuccess(Object o, Object o2, Object o3) {
                 ToastUtil.showShort(context, "Join Group Request Had Been Sent");
+            }
+
+            @Override
+            public void handleFailure(int code, String message) {
+                super.handleFailure(code, message);
+                Log.e("Error","Add Group0 ");
+                if(code == 333){
+                    ToastUtil.showShort(context, "You Already In The Group !");
+                    Intent intent = new Intent(SearchActivity.this, Chat_RecyclerView_Activity.class);
+                    intent.putExtra("othersideid", temp_id);
+                    startActivity(intent);
+                }
             }
         });
     }

@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +36,7 @@ import com.kpz.AnyChat.LoginActivity;
 import com.kpz.AnyChat.Others.MsgReceiver;
 import com.kpz.AnyChat.Others.RequestCallBack;
 import com.kpz.AnyChat.Others.RequestHelper;
+import com.kpz.AnyChat.Others.ToastUtil;
 import com.kpz.AnyChat.Others.Utils;
 import com.kpz.AnyChat.ProfileSetting.Profile_Setting_Home;
 import com.kpz.AnyChat.ProfileSetting.Profile_Setting_New;
@@ -53,6 +55,7 @@ import com.vrv.imsdk.listener.ReceiverChatListener;
 import com.vrv.imsdk.model.Account;
 import com.vrv.imsdk.model.Chat;
 import com.vrv.imsdk.model.ChatService;
+import com.vrv.imsdk.model.ItemModel;
 import com.vrv.imsdk.model.ResultCallBack;
 import com.vrv.imsdk.model.SystemMsg;
 
@@ -98,13 +101,47 @@ public class HomeActivity extends AppCompatActivity {
         final long selfid = RequestHelper.getAccountInfo().getID();
         final Account account = new Account();
         if(String.valueOf(selfid) != RequestHelper.getAccountInfo().getName().toString()) {
-            account.setName(selfid + "");
-            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
-                @Override
-                public void handleSuccess(Object o, Object o2, Object o3) {
-                }
-            });
+
+            new MaterialDialog.Builder(HomeActivity.this)
+                    .title("Nickname")
+                    .content("Choose a nickname!")
+                    .inputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME )
+                    .inputRangeRes(1, 20, R.color.red500)
+                    .input("Ab...", "", new MaterialDialog.InputCallback() {
+                        @Override
+                        public void onInput(MaterialDialog dialog, CharSequence input) {
+                            Account account = new Account();
+                            account.setID(RequestHelper.getAccountInfo().getID());
+                            account.setName(input.toString());
+                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
+                                @Override
+                                public void handleSuccess(Object o, Object o2, Object o3) {
+                                    Intent intent = getIntent();
+                                    finish();
+                                    startActivity(intent);
+                                    Log.e("Change NickName","Successful");
+                                }
+                            });
+                        }
+                    }).show();
+
+
+//            account.setName(selfid + "");
+//
+//            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
+//                @Override
+//                public void handleSuccess(Object o, Object o2, Object o3) {
+//                }
+//            });
         }
+
+
+
+        Account accountSelf = new Account();
+        accountSelf = RequestHelper.getAccountInfo();
+        //ToastUtil.showShort(accountSelf.toString());
+        Log.e("accountSelf", accountSelf.toString());
+
 
 //        RequestHelper.login_status(HomeActivity.this);
          profile = (ImageButton)findViewById(R.id.profile);
@@ -132,31 +169,20 @@ public class HomeActivity extends AppCompatActivity {
 //                App.finishApp(HomeActivity.this);
 //                startActivity(intent);
 
-                long krid = 9151316648393694037L;
-                ChatMsgBuilder builder = new ChatMsgBuilder(krid);
-
-                ChatMsg msgtest = builder.createTxtMsg("asdasdsaqwrqwrq test");
-                chatService.sendMsg(msgtest, new ResultCallBack<Void, Void, Void>() {
+                Account accountNew = new Account();
+                accountNew = RequestHelper.getAccountInfo();
+                Log.e("account new", accountNew.toString());
+                accountNew.setName("Zong");
+                final Account finalAccountNew = accountNew;
+                RequestHelper.updateAccountInfo(accountNew, new RequestCallBack() {
                     @Override
-                    public void onSuccess(Void aVoid, Void aVoid2, Void aVoid3) {
-                        Toast.makeText(HomeActivity.this, "Message sent successfully", Toast.LENGTH_SHORT);
-                    }
-
-                    @Override
-                    public void onError(int i, String s) {
-
-                    }
-                }, new ResultCallBack<Integer, Integer, String>() {
-                    @Override
-                    public void onSuccess(Integer integer, Integer integer2, String s) {
-
-                    }
-
-                    @Override
-                    public void onError(int i, String s) {
-
+                    public void handleSuccess(Object o, Object o2, Object o3) {
+                        Account updated = new Account();
+                        updated = finalAccountNew;
+                        Log.e("account new", finalAccountNew.toString());
                     }
                 });
+
             }
         });
 
@@ -389,10 +415,10 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
-        if(id == R.id.action_Scan_QR_code){
+//        if(id == R.id.action_Scan_QR_code){
 //            Intent intent = new Intent(getApplicationContext(), BarcodeReader.class);
 //            startActivity(intent);
-        }
+//        }
         if(id == R.id.action_search_group){
             Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
             startActivity(intent);

@@ -1590,8 +1590,8 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                                 (((TipsViewHolder) holder)).tv_sysmsg.setText(userinfo + " Removed by " + oprname);
                                 break;
                             case 5:
-                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
-                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
+//                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
+//                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
                                 break;
                         }
                 }

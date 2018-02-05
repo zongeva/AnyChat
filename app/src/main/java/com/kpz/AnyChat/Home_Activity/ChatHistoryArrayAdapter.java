@@ -55,8 +55,8 @@ public class ChatHistoryArrayAdapter extends ArrayAdapter<Chat> {
         final TextView chl_tv2 = (TextView) rowView.findViewById(R.id.chl_tv2);
         ImageView avatar = (ImageView) rowView.findViewById(R.id.chatlist_avatar);
 //        RelativeTimeTextView v = (RelativeTimeTextView)rowView.findViewById(R.id.timestamp);
-        TextView chatlist_timestamp = (TextView)rowView.findViewById(R.id.chatlist_timestamp);
-        TextView counts = (TextView)rowView.findViewById(R.id.textView76);
+        TextView chatlist_timestamp = (TextView) rowView.findViewById(R.id.chatlist_timestamp);
+        TextView counts = (TextView) rowView.findViewById(R.id.textView76);
 
         //Identify Last Msg Type
         long targetID = chatHistorys.get(position).getID();
@@ -67,36 +67,36 @@ public class ChatHistoryArrayAdapter extends ArrayAdapter<Chat> {
         Chat chat = ClientManager.getDefault().getChatService().findItemByID(chatHistorys.get(position).getID());
 
 //        v.setReferenceTime(chatHistorys.get(position).getMsgTime());
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
-            String msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
-            chatlist_timestamp.setText(msgtime.toString());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
+        String msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
+        chatlist_timestamp.setText(msgtime.toString());
 
-            if (chat != null ){
-                item_count = chat.getUnreadCount();
-                if (item_count>0) {
-                    counts.setVisibility(View.VISIBLE);
-                    counts.setText(item_count + "");
-                } else if (item_count>99){
-                    counts.setVisibility(View.VISIBLE);
-                    counts.setText("99+");
-                }
-            } else {
-                chat = ClientManager.getDefault().getChatService().findItemByID(chatHistorys.get(position).getID());
-
-
+        if (chat != null) {
+            item_count = chat.getUnreadCount();
+            if (item_count > 0) {
+                counts.setVisibility(View.VISIBLE);
+                counts.setText(item_count + "");
+            } else if (item_count > 99) {
+                counts.setVisibility(View.VISIBLE);
+                counts.setText("99+");
             }
+        } else {
+            chat = ClientManager.getDefault().getChatService().findItemByID(chatHistorys.get(position).getID());
 
 
-                if (ChatMsgApi.isGroup(targetID)) {
+        }
+
+
+        if (ChatMsgApi.isGroup(targetID)) {
 
             String groupname = RequestHelper.getGroupInfo(targetID).getName();
             Avatar_Url = RequestHelper.getGroupInfo(targetID).getAvatar();
             chl_tv1.setText("[Group] " + groupname);
 
-                    simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
-                    msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
+            simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
+            msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
 //                    chatlist_timestamp.setText(msgtime.toString());
-                    chatlist_timestamp.setText(DateTimeUtils.formatTime(context, chatHistorys.get(position).getMsgTime(), true).replace("am","AM").replace("pm","PM"));
+            chatlist_timestamp.setText(DateTimeUtils.formatTime(context, chatHistorys.get(position).getMsgTime(), true).replace("am", "AM").replace("pm", "PM"));
 
 
             if (Avatar_Url != null) {
@@ -110,9 +110,9 @@ public class ChatHistoryArrayAdapter extends ArrayAdapter<Chat> {
             String url = Utils.serverAddress + "retrieveusername?LinkdoodID=" + chatHistorys.get(position).getID();
 //            Utils.setNickname(context, url, chatHistorys.get(position).getID() + "", chl_tv1);
             Utils.loadHead(context, Avatar_Url, avatar, R.mipmap.vim_icon_default_user);
-                    simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
-                    msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
-                    chatlist_timestamp.setText(DateTimeUtils.formatTime(context, chatHistorys.get(position).getMsgTime(), true).replace("am","AM").replace("pm","PM"));
+            simpleDateFormat = new SimpleDateFormat("hh:mm a yyyy-MM-dd");
+            msgtime = simpleDateFormat.format(chatHistorys.get(position).getMsgTime());
+            chatlist_timestamp.setText(DateTimeUtils.formatTime(context, chatHistorys.get(position).getMsgTime(), true).replace("am", "AM").replace("pm", "PM"));
         }
 
         if (ChatMsgApi.TYPE_TEXT == chatHistorys.get(position).getMsgType()) {
@@ -132,22 +132,16 @@ public class ChatHistoryArrayAdapter extends ArrayAdapter<Chat> {
             chl_tv2.setText("[Video Attachmet]");
         } else if (ChatMsgApi.TYPE_FILE == chatHistorys.get(position).getMsgType()) {
             chl_tv2.setText("[Attachmet]");
-        }else if (ChatMsgApi.TYPE_REVOKE == chatHistorys.get(position).getMsgType()) {
+        } else if (ChatMsgApi.TYPE_REVOKE == chatHistorys.get(position).getMsgType()) {
             chl_tv2.setText("[Revoke]");
-        }
-
-        else if (ChatMsgApi.TYPE_WEAK_HINT == chatHistorys.get(position).getMsgType()) {
+        } else if (ChatMsgApi.TYPE_WEAK_HINT == chatHistorys.get(position).getMsgType()) {
             if (chatHistorys.get(position).getOprType() == 5) {
 
-            } else
-
-            {
-                chl_tv2.setText("[System Message]");
+            } else {
+                //chl_tv2.setText("[System Message]");
+                chl_tv2.setText(" ");
+            }
         }
-        }
-
-
-
 
 
         return rowView;

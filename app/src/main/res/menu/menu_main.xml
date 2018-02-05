@@ -8,11 +8,6 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_Scan_QR_code"
-        android:title="Scan QR Code"
-        android:visible="true"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_logout"
         android:title="Logout"
         android:visible="true"

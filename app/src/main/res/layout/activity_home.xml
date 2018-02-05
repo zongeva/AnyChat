@@ -68,7 +68,7 @@
             android:layout_toStartOf="@+id/scanqr"
             android:backgroundTint="@color/transparent"
             app:srcCompat="@mipmap/ic_menu_notify_empty"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
 
         <ImageButton
             android:id="@+id/profile"

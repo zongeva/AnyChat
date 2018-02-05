@@ -38,7 +38,7 @@ import java.util.List;
 public class CreateGroupChat extends AppCompatActivity {
     List<Long> userList = new ArrayList<Long>();
     String group_name;
-    EditText txt,keyword1,keyword2,keyword3;
+    EditText txt, keyword1, keyword2, keyword3;
     TextView txts;
     RadioButton private_button;
     RadioButton public_button;
@@ -56,9 +56,9 @@ public class CreateGroupChat extends AppCompatActivity {
         userList.add(conv2);
         private_button = (RadioButton) findViewById(R.id.private_button);
         public_button = (RadioButton) findViewById(R.id.public_button);
-        keyword1 = (EditText)findViewById(R.id.keyword1);
-        keyword2 = (EditText)findViewById(R.id.keyword2);
-        keyword3 = (EditText)findViewById(R.id.keyword3);
+        keyword1 = (EditText) findViewById(R.id.keyword1);
+        keyword2 = (EditText) findViewById(R.id.keyword2);
+        keyword3 = (EditText) findViewById(R.id.keyword3);
 
         keyword1.setText("");
         keyword2.setText("");
@@ -95,82 +95,75 @@ public class CreateGroupChat extends AppCompatActivity {
 
     public void go_create_group(View view) {
 
-                        txt = (EditText) findViewById(R.id.create_group_name);
-                        txts = (TextView) findViewById(R.id.temp);
-                        if(!keyword1.getText().toString().equals("") ) {
+        txt = (EditText) findViewById(R.id.create_group_name);
+        txts = (TextView) findViewById(R.id.temp);
+        if ((!txt.equals("") && !txt.equals(" ") && !txt.equals("   "))) {
+            pDialog = new ProgressDialog(CreateGroupChat.this);
+            pDialog.setTitle("Requesting server for create group");
+            pDialog.setMessage("Please Wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+            ClientManager.getDefault().getGroupService().create(1, txt.getText().toString(), userList, new ResultCallBack<Long, Void, Void>() {
+                @Override
+                public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
+                    pDialog.dismiss();
+                    SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                    TelephonyManager telephonyManager;
+                    telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+                    if (ActivityCompat.checkSelfPermission(CreateGroupChat.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
+                    String deviceId = telephonyManager.getDeviceId();
+                    String id = String.valueOf(RequestHelper.getAccountInfo().getID());
+                    String shared_login_password = prefs.getString("shared_login_password", "");//"No name defined" is the default value.
 
-                            if ((!txt.equals("") && !txt.equals(" ") && !txt.equals("   "))) {
-                                pDialog = new ProgressDialog(CreateGroupChat.this);
-                                pDialog.setTitle("Requesting server for create group");
-                                pDialog.setMessage("Please Wait...");
-                                pDialog.setCancelable(false);
-                                pDialog.show();
-                                ClientManager.getDefault().getGroupService().create(1, txt.getText().toString(), userList, new ResultCallBack<Long, Void, Void>() {
-                                    @Override
-                                    public void onSuccess(Long aLong, Void aVoid, Void aVoid2) {
-                                        pDialog.dismiss();
-                                        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-                                        TelephonyManager telephonyManager;
-                                        telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-                                        if (ActivityCompat.checkSelfPermission(CreateGroupChat.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                                            // TODO: Consider calling
-                                            //    ActivityCompat#requestPermissions
-                                            // here to request the missing permissions, and then overriding
-                                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                            //                                          int[] grantResults)
-                                            // to handle the case where the user grants the permission. See the documentation
-                                            // for ActivityCompat#requestPermissions for more details.
-                                            return;
-                                        }
-                                        String deviceId = telephonyManager.getDeviceId();
-                                        String id = String.valueOf(RequestHelper.getAccountInfo().getID());
-                                        String shared_login_password = prefs.getString("shared_login_password", "");//"No name defined" is the default value.
-
-                                        String url_token = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
+                    String url_token = Utils.serverAddress + "getauthorizationtoken?LinkdoodID=" + RequestHelper.getAccountInfo().getID() + "&UserSecret=" + shared_login_password + "&AppRandomKey=" + deviceId;
 //                                        Http_GetToken gt = new Http_GetToken(CreateGroupChat.this, 5, url_token, id, txts, deviceId, aLong + "", RequestHelper.getGroupInfo(aLong).getName(), keyword1.getText().toString() + ","+ keyword2.getText().toString() + "," + keyword3.getText().toString());
 //                                        gt.execute();
 
-                                        Log.e("Create Group", "Success");
+                    Log.e("Create Group", "Success");
 
-                                        if (public_button.isChecked() == true) {
-                                            RequestHelper.transferGroup(aLong, 9151316648393693993L, new RequestCallBack() {
-                                                @Override
-                                                public void handleSuccess(Object o, Object o2, Object o3) {
-                                                    Log.e("Group Transfer", "Success");
-                                                }
-                                            });
-                                            Intent intent = new Intent(CreateGroupChat.this, HomeActivity.class);
-                                            intent.putExtra("othersideid", aLong);
-                                            startActivity(intent);
-
-//                                        Toast.makeText(CreateGroupChat.this, "Group Created Successfullly", Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            Intent intent = new Intent(CreateGroupChat.this, HomeActivity.class);
-                                            intent.putExtra("othersideid", aLong);
-                                            startActivity(intent);
-//                                        Toast.makeText(CreateGroupChat.this, "Group Created Successfullly", Toast.LENGTH_SHORT).show();
-
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onError(int i, String s) {
-                                        pDialog.dismiss();
-                                        Toast.makeText(CreateGroupChat.this, "Invalid Group Parameter", Toast.LENGTH_SHORT).show();
-                                        Log.e("Group Create ", "Fail");
-                                        Log.e("Name", txt.getText().toString());
-
-
-                                    }
-                                });
-                            } else {
-                                txt.setError("Invalid Group Name");
+                    if (public_button.isChecked() == true) {
+                        RequestHelper.transferGroup(aLong, 9151316648393693993L, new RequestCallBack() {
+                            @Override
+                            public void handleSuccess(Object o, Object o2, Object o3) {
+                                Log.e("Group Transfer", "Success");
                             }
+                        });
+                        Intent intent = new Intent(CreateGroupChat.this, HomeActivity.class);
+                        intent.putExtra("othersideid", aLong);
+                        startActivity(intent);
 
-                        }
-                        else {
-                            Toast.makeText(this, "Please at least enter one keyword for your group", Toast.LENGTH_SHORT).show();
-                        }
+//                                        Toast.makeText(CreateGroupChat.this, "Group Created Successfullly", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(CreateGroupChat.this, HomeActivity.class);
+                        intent.putExtra("othersideid", aLong);
+                        startActivity(intent);
+//                                        Toast.makeText(CreateGroupChat.this, "Group Created Successfullly", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+                @Override
+                public void onError(int i, String s) {
+                    pDialog.dismiss();
+                    Toast.makeText(CreateGroupChat.this, "Invalid Group Parameter", Toast.LENGTH_SHORT).show();
+                    Log.e("Group Create ", "Fail");
+                    Log.e("Name", txt.getText().toString());
+
+
+                }
+            });
+        } else {
+            txt.setError("Invalid Group Name");
+        }
 
 
     }

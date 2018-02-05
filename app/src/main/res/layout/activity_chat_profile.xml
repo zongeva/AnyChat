@@ -59,7 +59,8 @@
             android:layout_toEndOf="@+id/personal_avatar"
             android:scaleType="fitXY"
             android:src="@drawable/qr"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/textView12"
