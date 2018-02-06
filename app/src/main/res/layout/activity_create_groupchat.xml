@@ -59,8 +59,8 @@
             android:layout_above="@+id/create_group_name"
             android:layout_alignStart="@+id/create_group_name"
             android:text="Public"
-            android:textColor="#3680BC"
             android:checked="true"
+            android:textColor="#3680BC"
             android:visibility="invisible"/>
 
         <RadioButton
@@ -129,7 +129,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/create_group_name"
-            android:text="Keyword is for quick searching purpose." />
+            android:text="Keyword is for quick searching purpose."
+            android:visibility="invisible"/>
     </RelativeLayout>
 
 </LinearLayout>

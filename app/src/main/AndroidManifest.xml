@@ -121,6 +121,9 @@
         <activity android:name=".Chat.Chat_Profile"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".Group_Chat.SelectGroupMemberTag"
+            android:screenOrientation="portrait"/>
+
 
 
 

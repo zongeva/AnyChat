@@ -300,6 +300,9 @@ public class HomeActivity extends AppCompatActivity {
                                 RequestHelper.removeChat(ids, new RequestCallBack() {
                                     @Override
                                     public void handleSuccess(Object o, Object o2, Object o3) {
+                                        long idss = ids;
+                                        Log.e("test ids", String.valueOf(idss));
+
                                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                         startActivity(intent);
@@ -403,7 +406,7 @@ public class HomeActivity extends AppCompatActivity {
                 public void onSuccess(Object o, Object o2, Object o3) {
                     Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
                     finishAffinity();
-                    HomeActivity.this.startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                    startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                 }
 
                 @Override

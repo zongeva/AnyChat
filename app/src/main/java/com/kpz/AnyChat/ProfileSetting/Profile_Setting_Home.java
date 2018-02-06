@@ -158,7 +158,7 @@ public class Profile_Setting_Home extends AppCompatActivity {
 
                 Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
                 finishAffinity();
-                Profile_Setting_Home.this.startActivity(new Intent(Profile_Setting_Home.this, LoginActivity.class));
+                startActivity(new Intent(Profile_Setting_Home.this, LoginActivity.class));
             }
 
             @Override

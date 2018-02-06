@@ -315,17 +315,17 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (count > 0) {// 文本框输入内容
-                    String substring = s.toString().substring(start, start + count);
-                    if (ChatMsgApi.isGroup(othersideid) && substring.equals("@")) {
-                        useEdit = inputwindow;
-                        hideSoftKeyboard();
-                        Intent intent = new Intent(Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
-                        intent.putExtra("user_group_id", othersideid);
-                        startActivityForResult(intent, SELECT_GROUP_MEMBERS);
-                    }
-                    txtpopup.setText(s);
-                }
+//                if (count > 0) {// 文本框输入内容
+//                    String substring = s.toString().substring(start, start + count);
+//                    if (ChatMsgApi.isGroup(othersideid) && substring.equals("@")) {
+//                        useEdit = inputwindow;
+//                        hideSoftKeyboard();
+//                        Intent intent = new Intent(Chat_RecyclerView_Activity.this, SelectGroupMemberTag.class);
+//                        intent.putExtra("user_group_id", othersideid);
+//                        startActivityForResult(intent, SELECT_GROUP_MEMBERS);
+//                    }
+//                    txtpopup.setText(s);
+//                }
             }
 
             @Override
@@ -381,8 +381,18 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Object o, Object o2, Object o3) {
                                     chatMsgList.remove(chatMsgList.size() - 1);
-                                    recyclerView.scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);                                    //need to refresh/renew
+                                    recyclerView.scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
+                                   //mAdapter.notifyDataSetChanged();
+                                    //recyclerView.refreshDrawableState();
+                                    //need to refresh/renew
                                     Log.e("UCC Log", "code " + Utils.osType + "1602001 Success to delete burn chat.");
+
+
+                                    //reload recycler view
+                                    Intent intent = new Intent(Chat_RecyclerView_Activity.this, Chat_RecyclerView_Activity.class);
+                                    intent.putExtra("othersideid", chatMsgList.get(position).getID());
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                                    startActivity(intent);
                                 }
 
                                 @Override
