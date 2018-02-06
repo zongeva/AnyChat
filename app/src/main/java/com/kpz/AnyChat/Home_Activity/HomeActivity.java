@@ -102,28 +102,28 @@ public class HomeActivity extends AppCompatActivity {
         final Account account = new Account();
         if(String.valueOf(selfid) != RequestHelper.getAccountInfo().getName().toString()) {
 
-            new MaterialDialog.Builder(HomeActivity.this)
-                    .title("Nickname")
-                    .content("Choose a nickname!")
-                    .inputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME )
-                    .inputRangeRes(1, 20, R.color.red500)
-                    .input("Ab...", "", new MaterialDialog.InputCallback() {
-                        @Override
-                        public void onInput(MaterialDialog dialog, CharSequence input) {
-                            Account account = new Account();
-                            account.setID(RequestHelper.getAccountInfo().getID());
-                            account.setName(input.toString());
-                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
-                                @Override
-                                public void handleSuccess(Object o, Object o2, Object o3) {
-                                    Intent intent = getIntent();
-                                    finish();
-                                    startActivity(intent);
-                                    Log.e("Change NickName","Successful");
-                                }
-                            });
-                        }
-                    }).show();
+//            new MaterialDialog.Builder(HomeActivity.this)
+//                    .title("Nickname")
+//                    .content("Choose a nickname!")
+//                    .inputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME )
+//                    .inputRangeRes(1, 20, R.color.red500)
+//                    .input("Ab...", "", new MaterialDialog.InputCallback() {
+//                        @Override
+//                        public void onInput(MaterialDialog dialog, CharSequence input) {
+//                            Account account = new Account();
+//                            account.setID(RequestHelper.getAccountInfo().getID());
+//                            account.setName(input.toString());
+//                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
+//                                @Override
+//                                public void handleSuccess(Object o, Object o2, Object o3) {
+//                                    Intent intent = getIntent();
+//                                    finish();
+//                                    startActivity(intent);
+//                                    Log.e("Change NickName","Successful");
+//                                }
+//                            });
+//                        }
+//                    }).show();
 
 
 //            account.setName(selfid + "");

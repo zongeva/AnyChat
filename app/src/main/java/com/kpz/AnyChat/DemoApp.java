@@ -38,10 +38,10 @@ public class DemoApp extends Application {
         if (init_bool.equals("true")) {
             boolean init = VIMClient.init(this, "com.kpz.AnyChat");
             if (!init) {
-                Log.e("UCC Log", "Code: 1101001 SDK failed to initial");
+                Log.e("Log", "SDK failed to initialize");
 
             } else {
-                Log.e("UCC Log", "Code: 1101002 SDK successfully initial");
+                Log.e("Log", "SDK successfully initialize");
                 SDKClient defaultClient = ClientManager.getDefault();
                 final AuthService authService = defaultClient.getAuthService();
 
