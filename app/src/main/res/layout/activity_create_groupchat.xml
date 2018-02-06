@@ -59,7 +59,9 @@
             android:layout_above="@+id/create_group_name"
             android:layout_alignStart="@+id/create_group_name"
             android:text="Public"
-            android:textColor="#3680BC" />
+            android:checked="true"
+            android:textColor="#3680BC"
+            android:visibility="invisible"/>
 
         <RadioButton
             android:id="@+id/private_button"
@@ -68,9 +70,10 @@
             android:layout_alignEnd="@+id/create_group_name"
             android:layout_below="@+id/textView11"
             android:layout_marginTop="59dp"
-            android:checked="true"
+            android:checked="false"
             android:text="Private"
-            android:textColor="#3680BC" />
+            android:textColor="#3680BC"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/create_group_btn"
@@ -126,7 +129,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/create_group_name"
-            android:text="Keyword is for quick searching purpose." />
+            android:text="Keyword is for quick searching purpose."
+            android:visibility="invisible"/>
     </RelativeLayout>
 
 </LinearLayout>

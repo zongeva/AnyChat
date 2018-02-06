@@ -158,6 +158,7 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                 return TYPE_AUDIO;
             } else if (ChatMsgApi.TYPE_WEAK_HINT == chatMsgList.get(position).getMsgType()) {
 
+
                 return R_TYPE_TIPS;
             } else {
                 return TYPE_DEFAULT;
@@ -303,10 +304,10 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
 
                     @Override
                     public void update(ChatMsg chatMsg) {
-                        if (chatMsgList.get(position).getMsgStatus() != chatMsgList.get(position).STATUS_SENDING) {
-                            ((TextViewHolder) holder).text_msg_state.setImageResource(R.drawable.received);
-                        } else if (chatMsgList.get(position).getMsgStatus() == chatMsgList.get(position).STATUS_SEND_FAILURE) {
-                        }
+//                        if (chatMsgList.get(position).getMsgStatus() != chatMsgList.get(position).STATUS_SENDING) {
+//                            ((TextViewHolder) holder).text_msg_state.setImageResource(R.drawable.received);
+//                        } else if (chatMsgList.get(position).getMsgStatus() == chatMsgList.get(position).STATUS_SEND_FAILURE) {
+//                        }
                     }
                 }, true);
 
@@ -971,8 +972,12 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                                 (((TipsViewHolder) holder)).tv_sysmsg.setText(userinfo + " Removed by " + oprname);
                                 break;
                             case 5:
-//                                (((TipsViewHolder) holder)).background.setVisibility(View.INVISIBLE);
-//                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.INVISIBLE);
+                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
+                                (((TipsViewHolder) holder)).background.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
+                                (((TipsViewHolder) holder)).tv_sysmsg.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+
+
                                 break;
                         }
                 }
@@ -1590,8 +1595,11 @@ public class RecyclerViewMultiChat_Adaptor extends RecyclerView.Adapter<Recycler
                                 (((TipsViewHolder) holder)).tv_sysmsg.setText(userinfo + " Removed by " + oprname);
                                 break;
                             case 5:
-//                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
-//                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
+                                (((TipsViewHolder) holder)).background.setVisibility(View.GONE);
+                                (((TipsViewHolder) holder)).background.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+                                (((TipsViewHolder) holder)).tv_sysmsg.setVisibility(View.GONE);
+                                (((TipsViewHolder) holder)).tv_sysmsg.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+
                                 break;
                         }
                 }

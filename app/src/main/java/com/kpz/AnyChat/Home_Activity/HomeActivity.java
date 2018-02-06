@@ -102,28 +102,28 @@ public class HomeActivity extends AppCompatActivity {
         final Account account = new Account();
         if(String.valueOf(selfid) != RequestHelper.getAccountInfo().getName().toString()) {
 
-            new MaterialDialog.Builder(HomeActivity.this)
-                    .title("Nickname")
-                    .content("Choose a nickname!")
-                    .inputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME )
-                    .inputRangeRes(1, 20, R.color.red500)
-                    .input("Ab...", "", new MaterialDialog.InputCallback() {
-                        @Override
-                        public void onInput(MaterialDialog dialog, CharSequence input) {
-                            Account account = new Account();
-                            account.setID(RequestHelper.getAccountInfo().getID());
-                            account.setName(input.toString());
-                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
-                                @Override
-                                public void handleSuccess(Object o, Object o2, Object o3) {
-                                    Intent intent = getIntent();
-                                    finish();
-                                    startActivity(intent);
-                                    Log.e("Change NickName","Successful");
-                                }
-                            });
-                        }
-                    }).show();
+//            new MaterialDialog.Builder(HomeActivity.this)
+//                    .title("Nickname")
+//                    .content("Choose a nickname!")
+//                    .inputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME )
+//                    .inputRangeRes(1, 20, R.color.red500)
+//                    .input("Ab...", "", new MaterialDialog.InputCallback() {
+//                        @Override
+//                        public void onInput(MaterialDialog dialog, CharSequence input) {
+//                            Account account = new Account();
+//                            account.setID(RequestHelper.getAccountInfo().getID());
+//                            account.setName(input.toString());
+//                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
+//                                @Override
+//                                public void handleSuccess(Object o, Object o2, Object o3) {
+//                                    Intent intent = getIntent();
+//                                    finish();
+//                                    startActivity(intent);
+//                                    Log.e("Change NickName","Successful");
+//                                }
+//                            });
+//                        }
+//                    }).show();
 
 
 //            account.setName(selfid + "");
@@ -300,6 +300,9 @@ public class HomeActivity extends AppCompatActivity {
                                 RequestHelper.removeChat(ids, new RequestCallBack() {
                                     @Override
                                     public void handleSuccess(Object o, Object o2, Object o3) {
+                                        long idss = ids;
+                                        Log.e("test ids", String.valueOf(idss));
+
                                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                                         startActivity(intent);
@@ -403,7 +406,7 @@ public class HomeActivity extends AppCompatActivity {
                 public void onSuccess(Object o, Object o2, Object o3) {
                     Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
                     finishAffinity();
-                    HomeActivity.this.startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                    startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                 }
 
                 @Override
