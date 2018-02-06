@@ -68,7 +68,6 @@ public class MsgReceiver extends Service {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -85,7 +84,6 @@ public class MsgReceiver extends Service {
 
                 } else {
                     notificationShow(chat, -1,TYPE_SYSTEM);
-
                 }
             }
         };
@@ -124,17 +122,13 @@ public class MsgReceiver extends Service {
                                         }
                                     }
                                 });
-
                             } else {
                                 //Do nothing, disabled.
                             }
                         }
                     });
-
                 }
             }, true);
-
-
         }
         return START_STICKY;
     }

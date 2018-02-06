@@ -128,25 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("shared_login_password", password);
                             editor.apply();
 
-                            //User user = new User();
-                            //user.setName("zong");
-                            final Account account = new Account();
-                            account.setID(aLong);
-                            //account.setName("zong");
-//                            RequestHelper.updateAccountInfo(account, new RequestCallBack() {
-//                                @Override
-//                                public void handleSuccess(Object o, Object o2, Object o3) {
-//                                    Toast.makeText(LoginActivity.this, "set nick success " + account.getName(), Toast.LENGTH_SHORT).show();
-//
-//                                }
-//                            });
-
-                            //RequestHelper.getAccountInfo().getName();
-
-
-                            //problem: retrieve nickname?
-
-                            Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + RequestHelper.getAccountInfo().getName(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this, "Log in success " + "Welcome " + RequestHelper.getAccountInfo().getName(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             Log.e("test kr id", aLong.toString());
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
