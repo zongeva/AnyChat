@@ -41,7 +41,7 @@ public class Chat_Profile extends AppCompatActivity {
         setContentView(R.layout.activity_chat_profile);
         othersideid = getIntent().getExtras().getLong("othersideid");
 
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ImageView avatar = (ImageView) findViewById(R.id.personal_avatar);
         TextView current_username = (TextView) findViewById(R.id.current_username);
 

@@ -84,7 +84,7 @@ public class SearchActivity extends BaseActivity implements ChatCallback {
 
     @Override
     protected void setViews() {
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Group Search");
     }
 
