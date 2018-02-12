@@ -1393,7 +1393,7 @@ public class Chat_RecyclerView_Activity extends AppCompatActivity {
                 inputwindow.setVisibility(View.INVISIBLE);
                 back_btn.setVisibility(View.INVISIBLE);
             } else {
-                Intent intent = new Intent(this, HomeActivity.class);
+                Intent intent = new Intent(Chat_RecyclerView_Activity.this, HomeActivity.class);
                 startActivity(intent);
             }
         }

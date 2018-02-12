@@ -198,6 +198,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -404,7 +405,7 @@ public class HomeActivity extends AppCompatActivity {
             ClientManager.getDefault().getAuthService().logout(new ResultCallBack() {
                 @Override
                 public void onSuccess(Object o, Object o2, Object o3) {
-                    Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
+                    Log.e("Log", "Code: " + Utils.osType + "1501001 Logout Success");
                     finishAffinity();
                     startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                 }

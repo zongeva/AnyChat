@@ -33,6 +33,8 @@ public class Register extends AppCompatActivity {
     EditText et_password;
     EditText et_veriCode;
     EditText et_nickname;
+    Button btn_haveaccount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class Register extends AppCompatActivity {
         et_password = (EditText) findViewById(R.id.et_password);
         et_veriCode = (EditText) findViewById(R.id.et_veriCode);
         et_nickname = (EditText) findViewById(R.id.et_nickname);
+        btn_haveaccount = (Button) findViewById(R.id.btn_alreadyhaveaccount);
+
 
         final byte userType = 1;
         final String server = "im.linkdood.com";
@@ -125,10 +129,6 @@ public class Register extends AppCompatActivity {
                             //problem: set nickname when registering
 
 
-
-
-
-
                         }
 
                         @Override
@@ -139,6 +139,14 @@ public class Register extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        btn_haveaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -51,17 +51,17 @@ public class Request_Permission extends Activity {
             //This is called if user has denied the permission before
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
                 ActivityCompat.requestPermissions(this, PERMISSIONS, requestCode);
-                Log.e("UCC Log", "Code: 1001001 Some required has been denied before but request again.");
+                Log.e("Log", "Some required has been denied before but request again.");
             } else {
                 ActivityCompat.requestPermissions(this, PERMISSIONS, requestCode);
-                Log.e("UCC Log", "Code: 1001002 Some permission haven't granted.");
+                Log.e("Log", "Some permission haven't granted.");
             }
         } else {
             SharedPreferences.Editor editor = context.getSharedPreferences(MY_PREFS_NAME, context.MODE_PRIVATE).edit();
             editor.putString("init_bool", "true");
             editor.apply();
 
-            Log.e("UCC Log", "Code: 1001003 All required permission granted");
+            Log.e("Log", "All required permission granted");
             Request_Permission.this.startActivity(new Intent(Request_Permission.this, LoginActivity.class));
             finish();
         }

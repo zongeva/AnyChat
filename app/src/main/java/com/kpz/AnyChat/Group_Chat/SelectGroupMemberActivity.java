@@ -134,7 +134,7 @@ public class SelectGroupMemberActivity extends BaseActivity {
                                                 RequestHelper.removeMember(othersideid, adapter.getItemObject(pos).getID(), new RequestCallBack() {
                                                     @Override
                                                     public void handleSuccess(Object o, Object o2, Object o3) {
-                                                        Log.e("UCC Log MemberDel", "Succesfully");
+                                                        Log.e("MemberDel", "Succesfully");
                                                     }
 
                                                     @Override
@@ -166,7 +166,7 @@ public class SelectGroupMemberActivity extends BaseActivity {
                                                 RequestHelper.transferGroup(othersideid, adapter.getItemObject(pos).getID(), new RequestCallBack() {
                                                     @Override
                                                     public void handleSuccess(Object o, Object o2, Object o3) {
-                                                        Log.e("UCC Log OwnTrans", "Success");
+                                                        Log.e("OwnTrans", "Success");
                                                     }
                                                     @Override
                                                     public void handleFailure(int code, String message) {

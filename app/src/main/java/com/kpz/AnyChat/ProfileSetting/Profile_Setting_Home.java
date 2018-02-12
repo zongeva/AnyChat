@@ -125,6 +125,16 @@ public class Profile_Setting_Home extends AppCompatActivity {
 //        Http_GetToken gts = new Http_GetToken(getApplicationContext(), 13, url_token, ids, me_ld, deviceId, "", "","");
 //        gts.execute();
 
+        go_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("Log", "Logout Success");
+
+                finishAffinity();
+                startActivity(new Intent(Profile_Setting_Home.this, LoginActivity.class));
+            }
+        });
+
     }
 
     public void go_profile(View view) {
@@ -167,6 +177,8 @@ public class Profile_Setting_Home extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     protected void onStart() {

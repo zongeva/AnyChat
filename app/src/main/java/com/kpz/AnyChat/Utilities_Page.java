@@ -124,14 +124,14 @@ public class Utilities_Page extends AppCompatActivity {
             ClientManager.getDefault().getAuthService().logout(new ResultCallBack() {
                 @Override
                 public void onSuccess(Object o, Object o2, Object o3) {
-                    Log.e("UCC Log", "Code: " + Utils.osType + "1501001 Logout Success");
+                    Log.e("Log", "1501001 Logout Success");
                     finishAffinity();
                     Utilities_Page.this.startActivity(new Intent(Utilities_Page.this, LoginActivity.class));
                 }
 
                 @Override
                 public void onError(int i, String s) {
-                    Log.e("UCC Log", "Code: " + Utils.osType + "1501002 Logout Failed");
+                    Log.e("Log", "1501002 Logout Failed");
                 }
             });
             return true;

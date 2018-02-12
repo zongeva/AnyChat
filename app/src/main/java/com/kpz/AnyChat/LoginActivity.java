@@ -42,9 +42,9 @@ public class LoginActivity extends AppCompatActivity {
 
         boolean init = VIMClient.init(this, "com.kpz.anychat");
         if (!init) {
-            Log.e("UCC Log", "Code: 1101001 SDK failed to initialize");
+            Log.e("Log", "SDK failed to initialize");
         } else {
-            Log.e("UCC Log", "Code: 1101002 SDK successfully initialize");
+            Log.e("Log", "SDK successfully initialize");
         }
 
         SDKClient defaultClient = ClientManager.getDefault();
@@ -143,6 +143,14 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Incorrect number or password", Toast.LENGTH_SHORT).show();
 
                             }
+                            if(i==113)
+                            {
+                                Toast.makeText(LoginActivity.this, "Account is already logged in", Toast.LENGTH_SHORT).show();
+                            }
+                            if(i==-1)
+                            {
+                                Toast.makeText(LoginActivity.this, "Unable to connect to server, please check your internet connection", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
@@ -150,5 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 }

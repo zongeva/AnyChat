@@ -22,9 +22,9 @@
     <application
         android:name=".DemoApp"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/anychat_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/anychat_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup">
@@ -41,14 +41,9 @@
             android:value="0l" />
 
         <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="portrait"
+            android:allowClearUserData="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
         <activity android:name=".Request_Permission"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -57,7 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <activity android:name=".Register"
             android:screenOrientation="portrait"></activity>
 

@@ -125,13 +125,13 @@ public class ChatHistoryArrayAdapter extends ArrayAdapter<Chat> {
                 }
             }
         } else if (ChatMsgApi.TYPE_IMAGE == chatHistorys.get(position).getMsgType()) {
-            chl_tv2.setText("[Image Attachmet]");
+            chl_tv2.setText("[Image Attachment]");
         } else if (ChatMsgApi.TYPE_AUDIO == chatHistorys.get(position).getMsgType()) {
-            chl_tv2.setText("[Audio Attachmet]");
+            chl_tv2.setText("[Audio Attachment]");
         } else if (ChatMsgApi.TYPE_MINI_VIDEO == chatHistorys.get(position).getMsgType()) {
-            chl_tv2.setText("[Video Attachmet]");
+            chl_tv2.setText("[Video Attachment]");
         } else if (ChatMsgApi.TYPE_FILE == chatHistorys.get(position).getMsgType()) {
-            chl_tv2.setText("[Attachmet]");
+            chl_tv2.setText("[Attachment]");
         } else if (ChatMsgApi.TYPE_REVOKE == chatHistorys.get(position).getMsgType()) {
             chl_tv2.setText("[Revoke]");
         } else if (ChatMsgApi.TYPE_WEAK_HINT == chatHistorys.get(position).getMsgType()) {
